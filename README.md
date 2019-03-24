@@ -19,10 +19,16 @@ This repository is the submission for the 2019 project for the Programming and S
 
 1. Readme.md
 
-
+## Research
+1. Background information
+2. Data Set Analysis
+3. Summary of investigation
+4. Supporting tables and graphics
 
 ##  Acknowledgments
 
+https://www.kaggle.com/uciml/iris
+http://archive.ics.uci.edu/ml/index.php
 https://www.python.org/,
 https://stackoverflow.com/,
 https://matplotlib.org/
