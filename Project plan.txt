@@ -1,0 +1,6 @@
+Summary of data set:
+
+Data Set Information:
+
+The data set records 3 classes of iris.  50 Iris's are logged for species and dimensions (length and width)
+of its sepal and petal measurements in centimeters.
