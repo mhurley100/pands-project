@@ -10,7 +10,7 @@ import csv
 
 # Load the dataset
 # Modified using python tutorial 7.2.  [https://docs.python.org/3/tutorial/inputoutput.html]
-# Open filename (user file on the CLI) and call it f:
+# Open "Iris.csv" saved within this folder and call it f:
 with open("Iris.csv", "r") as f:
 # Name the headers of the dataset
   headers = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']

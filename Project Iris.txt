@@ -1,0 +1,21 @@
+Research of data set:
+
+Data Set Information:
+
+The data set records 3 classes of iris.  50 Iris's are logged for species and dimensions 
+(length and width) of its sepal and petal measurements in centimetres.
+The Iris flowers were taken from the same location, measured by the same person, 
+and with the same instrument.
+
+Petals — the usually brightly coloured parts that together form most of a flower
+Sepals — one of the outer part that surround the petals (usually small and green)
+
+
+Investigate:
+
+Is there a correlation between sepal width and length?
+
+Can an Iris species be identified by its dimension?
+
+
+
