@@ -20,8 +20,8 @@ This repository is the submission for the 2019 project for the Programming and S
 1. Readme.md
 
 ## Research
-1. Background information
-2. Data Set Analysis
+2. Project Iris.txt.  This contains initial investigation parameter
+3. Data Set Analysis
 3. Summary of investigation
 4. Supporting tables and graphics
 

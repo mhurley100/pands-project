@@ -13,9 +13,16 @@ Sepals — one of the outer part that surround the petals (usually small and
 
 Investigate:
 
-Is there a correlation between sepal width and length?
+1. Is there a correlation between sepal width and length?
 
-Can an Iris species be identified by its dimension?
+2. Can an Iris species be identified by its dimension?
+
+Iris-1.py separates the Iris flowers into their respective classes.  
+Using pandas dataframe describe to analyse each data set.
+
+
+
+
 
 
 
