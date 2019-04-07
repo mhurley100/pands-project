@@ -19,6 +19,13 @@ Investigate:
 
 Iris-1.py separates the Iris flowers into their respective classes.  
 Using pandas dataframe describe to analyse each data set.
+Use graphics to understand the data by visualising and summarising.
+
+The box and whisper plots demonstrate that distributions are relatively even
+
+Histograms point out the diffences in the distributions
+
+Scattergraph looks at the relationship between the attributes
 
 
 

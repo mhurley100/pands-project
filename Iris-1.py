@@ -5,6 +5,7 @@
 
 # Load libraries
 import pandas as pd
+from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 import csv
 
@@ -27,11 +28,11 @@ print(dataset.groupby('class').size())
 
 # Modified from [https://www.kaggle.com/abhishekkrg/python-iris-data-visualization-and-explanation]
 # Name each dataset - Setosa is the class Iris Setosa
-setosa=dataset[dataset['class']=='Iris-setosa']
+setosa = dataset[dataset['class']=='Iris-setosa']
 # Name each dataset - Versicolor is the class Iris Versicolor
-versicolor =dataset[dataset['class']=='Iris-versicolor']
+versicolor = dataset[dataset['class']=='Iris-versicolor']
 # Name each dataset - Virginica is the class Iris Virginica
-virginica =dataset[dataset['class']=='Iris-virginica']
+virginica = dataset[dataset['class']=='Iris-virginica']
 # Include headers for each dataset and separate by adding new line. Adapted from 
 # [https://stackoverflow.com/a/45377991]. Call it newline
 newline = ('\n')
@@ -42,6 +43,24 @@ print('Iris Versicolor',newline, versicolor.describe())
 # Print the class first ("Iris Virginica"), then use the pandas dataframe describe() to analyse the series
 print('Iris Virginica',newline, virginica.describe())
 
+# Use box plot to display. Adapted from [https://machinelearningmastery.com/quick-and-dirty-data-analysis-with-pandas/]
+
+setosa.boxplot()
+plt.show()
+versicolor.boxplot()
+plt.show()
+virginica.boxplot()
+plt.show()
 # Create histograms using pandas dataframe hist ()
-dataset.hist()
+# Adapted from [https://machinelearningmastery.com/quick-and-dirty-data-analysis-with-pandas/]
+
+setosa.groupby('class').hist()
+plt.show()
+versicolor.groupby('class').hist()
+plt.show()
+virginica.groupby('class').hist()
+plt.show()
+
+from pandas.plotting import scatter_matrix
+scatter_matrix(setosa, alpha=0.2, figsize=(6, 6), diagonal='kde')
 plt.show()
