@@ -41,3 +41,7 @@ print('Iris Setosa',newline, setosa.describe())
 print('Iris Versicolor',newline, versicolor.describe())
 # Print the class first ("Iris Virginica"), then use the pandas dataframe describe() to analyse the series
 print('Iris Virginica',newline, virginica.describe())
+
+# Create histograms using pandas dataframe hist ()
+dataset.hist()
+plt.show()
