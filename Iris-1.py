@@ -3,7 +3,7 @@
 
 # Modified from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
 
-# Load libraries
+# Load Pandas, scatter matrix from pandas, matplotlib and csv libraries
 import pandas as pd
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt

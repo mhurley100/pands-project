@@ -20,8 +20,32 @@ This repository is the submission for the 2019 project for the Programming and S
 1. Readme.md
 
 ## Research
-2. Project Iris.txt.  This contains initial investigation parameter
+The data set records 3 classes of iris.  50 Iris's are logged for species and dimensions 
+(length and width) of its sepal and petal measurements in centimetres.
+The Iris flowers were taken from the same location, measured by the same person, 
+and with the same instrument.
+
+Petals — the usually brightly coloured parts that together form most of a flower
+Sepals — one of the outer part that surround the petals (usually small and green)
+
+
+Investigate:
+
+1. Is there a correlation between sepal width and length?
+
+2. Can an Iris species be identified by its dimension?
+
+Iris-1.py separates the Iris flowers into their respective classes.  
+Using pandas dataframe describe to analyse each data set.
+Use graphics to understand the data by visualising and summarising.
+
+The box and whisper plots demonstrate that distributions are relatively even
+
+Histograms point out the diffences in the distributions
+
+Scattergraph looks at the relationship between the attributes
 3. Data Set Analysis
+
 3. Summary of investigation
 4. Supporting tables and graphics
 
