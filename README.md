@@ -2,7 +2,7 @@
 
 This repository is the submission for the 2019 project for the Programming and Scripting Module @ GMIT.
 
-[Project set is located:] (https://github.com/ianmcloughlin/project-pands/raw/master/project.pdf)
+[Project is located:] (https://github.com/ianmcloughlin/project-pands/raw/master/project.pdf)
       
 ## To download this repository:
 
@@ -10,24 +10,21 @@ This repository is the submission for the 2019 project for the Programming and S
 2. Go to my repository [https://github.com/mhurley100/pands-project.git]
 3. Click the Clone or download button
 
-## How to run the code:
-
-1. Python is required to run the programs
-2. Using the Command Line interface execute each program
-
-## The problem set contains the following:
-
-1. Readme.md
-
 ## Research
-The data set records 3 classes of iris.  50 Iris's are logged for species and dimensions 
-(length and width) of its sepal and petal measurements in centimetres.
-The Iris flowers were taken from the same location, measured by the same person, 
-and with the same instrument.
+Ronald A. Fischer (British statistician and biologist) formulated linear discriminant analysis using a multivariate data set (Iris) in his 1936 paper "The use of multiple measurements in taxonomic problems". The Iris flowers were taken from the same location, measured by the same person and with the same instrument.
 
-Petals — the usually brightly coloured parts that together form most of a flower
-Sepals — one of the outer part that surround the petals (usually small and green)
+The data set comprises 50 samples from each of three species of Iris:
+1. Iris setosa
+2. Iris virginica
+3. Iris versicolor
 
+Four features are were measured from each sample:
+1. Sepal length (cm)
+2. Speal width (cm)
+3. Petal length (cm)
+4. Petal width (cm) 
+
+The goal of discriminant analysis is given four measurements a flower can be classified correctly. 
 
 Investigate:
 
@@ -58,3 +55,4 @@ https://stackoverflow.com/,
 https://matplotlib.org/
 http://www.numpy.org/
 https://pandas.pydata.org/
+https://diwashrestha.com/2017/09/18/machine-learning-on-iris/
