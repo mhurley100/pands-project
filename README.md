@@ -66,9 +66,9 @@ Seaborn pairplot is used to graphically compare the distributions.  A pairs plot
 In the command line interface run Iris-2.py.
 
 When Iris-2.py is run Iris-Setosa stands out again as being relatively easy to classify given the 4 dimensions.
-    - 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clealy demonstrated in the scatter plot matrices.
+- 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clealy demonstrated in the scatter plot matrices.
  
-    -Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
+- Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
   
 In the command line interface run Iris-3.py.
 
