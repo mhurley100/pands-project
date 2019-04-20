@@ -72,7 +72,6 @@ Pairsplots quickly explores distributions and relationships in a dataset. . A pa
 
 
 
-
 ### Data obsevations
 The standard deviation for all three species of Iris is low therfore the results indiciate that the data is consistent.
 
