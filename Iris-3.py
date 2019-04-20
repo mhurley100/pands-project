@@ -17,12 +17,11 @@ with open("Iris.csv", "r") as f:
 
 # Modified from [https://seaborn.pydata.org/generated/seaborn.PairGrid.html]
 # Use seaborn pairgrid functionality on the dataset
-g = sns.PairGrid(dataset, hue="class")
-# Generate histogram using seaborn
-g = g.map_diag(plt.hist, histtype="step", linewidth=3)
+g = sns.PairGrid(dataset, hue="class", palette="Set2",
+  hue_kws={"marker": ["o", "s", "D"]})
 # Generate scatter plot using seaborn
-g = g.map_offdiag(plt.scatter)
+g = g.map(plt.scatter, linewidths=1, edgecolor="w", s=40)
 # Add legend
-g.add_legend()
+g = g.add_legend()
 # Show the plots
 plt.show()
