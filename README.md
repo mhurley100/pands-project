@@ -37,7 +37,7 @@ Four features are were measured from each sample:
 
 Ronald A. Fischer (British statistician and biologist) used Anderson’s data and formulated linear discriminant analysis using the Iris dataset in his 1936 paper "The use of multiple measurements in taxonomic problems". 
 
-The goal of discriminant analysis is given four measurements a flower can be classified correctly. Given certain data outcome can be predicted.
+The goal of discriminant analysis is given four measurements a flower can be classified correctly. This means that given certain data outcome may be predictable.
 
 
 ## Dataset Analysis
@@ -54,27 +54,38 @@ Pandas dataframe describe() is used to analyse each data set.
 - Describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris.
 
 In the command line interface run Iris-1.py and observe the output.
+View the output below:
 
 From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and potentially predictable.  The dataset is relatively small (150 samples) however it is still complex and the next step is to graphically view the outputs.
 
 ### Graphics
 
-Iris-2.py uses graphics to aid analysis of the data using the seaborn visualisation library.  This should help identify trends for follow-up analysis
+Iris-2.py uses graphics to aid analysis of the dataset using the seaborn visualisation library.  This should help identify trends for follow-up analysis.
+Seaborn pairplot is used to graphically compare the distributions.  A pairs plot provides  visualisation of both the distribution of single variables and relationships between two variables.    
 
 In the command line interface run Iris-2.py.
 
-Seaborn pairplot is used to graphically compare the distributions.  A pairs plot provides  visualisation of both the distribution of single variables and relationships between two variables.    When Iris-2.py is run Iris-Setosa stands out again as being relatively easy to classify given the 4 dimensions.
+When Iris-2.py is run Iris-Setosa stands out again as being relatively easy to classify given the 4 dimensions.
     - 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clealy demonstrated in the scatter plot matrices.
  
-    Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
+    -Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
   
 In the command line interface run Iris-3.py.
 
-This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range.
+This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
+
+Petal width:
+- Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
+- Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
+- Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using Petal width
 
 
 
-### Data Evaluation
+## Applying Machine learning
+Now that the dataset is understood, we can start implementing algorithms in machine learning. 
+
+### Conclusion
+
 
 Summary of investigation
 ## Supporting tables and graphics
