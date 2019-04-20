@@ -21,7 +21,7 @@ with open("Iris.csv", "r") as f:
 # Print the dataset so only first 20 appear
   print(dataset.head(20))
 
-# Print number of rows for each Species.
+# Print summary dataset for each class
 print(dataset.groupby('class').size())
 
 #Create 3 DataFrames for each class of Iris
@@ -63,4 +63,7 @@ plt.show()
 
 from pandas.plotting import scatter_matrix
 scatter_matrix(setosa, alpha=0.2, figsize=(6, 6), diagonal='kde')
+plt.title('Iris Dataset scatter Plot')
 plt.show()
+
+sns.violinplot(data=df,x='class',y='PetalLengthCm')
