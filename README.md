@@ -23,7 +23,7 @@ Iris data set is saved within the repository as a text file [https://github.com/
 
 ## Background Research
 Edgar Anderson collected data on 3 different iris species on the Gaspe Peninsula, Quebec, Canada.
-He picked the Iris flowers from the same location, measured by the himself with the same instrument.
+He picked 2 species of the Iris flowers from the same location, measured by the himself with the same instrument.
 The data set comprised 50 samples from each of three species of Iris:
 1. Iris setosa
 2. Iris virginica
@@ -54,9 +54,14 @@ Iris-1.py is a series of python commands that analyses and interprets the datase
     - Iris-versicolor
 
 ### Analyse Data using pandas
-- Pandas dataframe describe() is then used to analyse each data set
+Pandas dataframe describe() is used to analyse each data set.
 - Statistical calculations are completed for each class (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris.
-A low standard deviation indicates that the data points tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
+A low standard deviation indicates that the data points tend to be close to the mean of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
+
+The standard deviation for all three species of Iris is low therfore the results indiciate that the data is consistent and it can be 
+used to identify and class Iris species.  
+
+I will now focus on mean values in order to predict Iris species.
 
 - Graphics to aid understanding of the data by visualising and summarising.
     - The box and whisper plots demonstrate that distributions are relatively even.
