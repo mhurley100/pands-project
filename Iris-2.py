@@ -3,9 +3,10 @@
 
 # Modified from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
 
-# Load Pandas, scatter matrix from pandas, matplotlib and csv libraries
+# Load Pandas, pandas plotting, seaborn, matplotlib and csv libraries
 import pandas as pd
 from pandas.plotting import scatter_matrix
+import seaborn as sns
 import matplotlib.pyplot as plt
 import csv
 
@@ -27,25 +28,7 @@ versicolor = dataset[dataset['class']=='Iris-versicolor']
 # Name each dataset - Virginica is the class Iris Virginica
 virginica = dataset[dataset['class']=='Iris-virginica']
 
-# Use box plot to display. Adapted from [https://machinelearningmastery.com/quick-and-dirty-data-analysis-with-pandas/]
-
-setosa.boxplot()
-plt.show()
-versicolor.boxplot()
-plt.show()
-virginica.boxplot()
-plt.show()
-# Create histograms using pandas dataframe hist ()
-# Adapted from [https://machinelearningmastery.com/quick-and-dirty-data-analysis-with-pandas/]
-
-setosa.groupby('class').hist()
-plt.show()
-versicolor.groupby('class').hist()
-plt.show()
-virginica.groupby('class').hist()
-plt.show()
-
-from pandas.plotting import scatter_matrix
-scatter_matrix(setosa, alpha=0.2, figsize=(6, 6), diagonal='kde')
-plt.title('Iris Dataset scatter Plot')
+# Use seaborn to generate graphics [https://seaborn.pydata.org/generated/seaborn.pairplot.html]
+g = sns.pairplot(dataset, hue='class', markers=["o", "s", "D"])
+# Show the plot
 plt.show()

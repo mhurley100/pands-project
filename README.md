@@ -48,25 +48,35 @@ Expectations of this analysis
 ## Dataset Analysis
 
 ### Import data:
-Iris-1.py is a series of python commands that analyses and interprets the dataset.  The Iris raw data is imported into python as a csv file.  The Iris flowers are grouped into their respective classes (setosa, versicolor and virginica) and separated by petal width, petal length, sepal width and sepal length.  Each class of Iris within the data set is given a name.  
+In the command line interface run Iris-1.py.
+
+Iris-1.py is a python program that calculates statistics on the dataset.  The Iris raw data is imported into python as a csv file.  The Iris flowers are grouped into their respective classes (setosa, versicolor and virginica) and separated by petal width, petal length, sepal width and sepal length.  Each class of Iris within the data set is given a name.  
     - Iris-setosa
     - Iris-virginica
     - Iris-versicolor
 
-### Analyse Data using pandas
 Pandas dataframe describe() is used to analyse each data set.
-- Statistical calculations are completed for each class (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris.
-A low standard deviation indicates that the data points tend to be close to the mean of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
+- Describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris.
 
-The standard deviation for all three species of Iris is low therfore the results indiciate that the data is consistent and it can be 
-used to identify and class Iris species.  
+From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therfore the results indiciate that the data samples are reasonably close to the mean and potentially predictable.  The dataset is relatively small (150 samples) however it is still difficult to analyse using tables alone therefore we will use graphics to see if we can predict the species of Iris graphically.
 
-I will now focus on mean values in order to predict Iris species.
+### Graphics
+Iris-2.py uses graphics to aid analysis of the data by correlating pictorally using the seaborn visualization library. This creates default pairs plot for quick examination of the data.
 
-- Graphics to aid understanding of the data by visualising and summarising.
-    - The box and whisper plots demonstrate that distributions are relatively even.
-    - Histograms point out the diffences in the distributions
-    - Scattergraph looks at the relationship between the attributes
+Firstly use seaborn pairplot to graphically compare the distributions.  A pairs plot allows us to see both distribution of single variables and relationships between two variables. Pair plots will help identify trends for follow-up analysis.   Iris-2.py is run Iris-Setosa stands out as being relatively easy to identify.
+Pairsplots quickly explores distributions and relationships in a dataset. . A pairs plot is provides us with a comprehensive first look at the data.
+    - 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clealy demonstrated in the scatter plot matrices.
+ 
+    Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
+    Therfore in this project I narrowing the scop of the project by focusing on a species of Iris looking at petal width and length with a view to further reducing as the analysis dictates.
+
+
+
+
+### Data obsevations
+The standard deviation for all three species of Iris is low therfore the results indiciate that the data is consistent.
+
+n the attributes
 
 - Data Set Analysis
 
@@ -81,5 +91,7 @@ Summary of investigation
 - https://stackoverflow.com/,
 - https://matplotlib.org/
 - http://www.numpy.org/
+- https://towardsdatascience.com
 - https://pandas.pydata.org/
+- https://seaborn.pydata.org/
 - http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf
