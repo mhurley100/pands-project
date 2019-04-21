@@ -58,6 +58,12 @@ View the output below:
 
 From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and potentially predictable.  The dataset is relatively small (150 samples) however it is still complex and the next step is to graphically view the outputs.
 
+Petal width observations:
+- Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
+- Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
+- Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using 
+
+
 ### Graphics
 
 Iris-2.py uses graphics to aid analysis of the dataset using the seaborn visualisation library.  This should help identify trends for follow-up analysis.
@@ -74,17 +80,21 @@ In the command line interface run Iris-3.py.
 
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
 
-Petal width:
-- Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
-- Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
-- Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using Petal width
-
 
 
 ## Applying Machine learning
-Now that the dataset is understood, we can start implementing algorithms in machine learning. 
+Apply machine learning techniques to validate the data and estimate accuracy.
+KNN can be used for both classification and regression predictive problems. 
+
+KNN (K-Nearest Neighbor) is a simple supervised classification algorithm we can use to assign a class to new data point. It can be used for regression as well, KNN does not make any assumptions on the data distribution, hence it is non-parametric. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
+
+
+ Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.
+
 
 ### Conclusion
+In ML, there is no specific model or an algorithm which can give 100% result to every single dataset. We need to understand the data before we apply any algorithm and build our model depending on the desired result. 
+
 
 
 Summary of investigation
@@ -102,3 +112,4 @@ Summary of investigation
 - https://pandas.pydata.org/
 - https://seaborn.pydata.org/
 - http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf
+- https://machinelearningmastery.com
