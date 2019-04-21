@@ -25,9 +25,9 @@ Iris data set is saved within the repository as a text file [https://github.com/
 Edgar Anderson collected data on 3 different Iris species on the Gaspe Peninsula, Quebec, Canada.
 Two of the three species were collected "all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus".[1] 
 The data set comprises 50 samples from each of three species of Iris:
-1. Iris setosa
-2. Iris virginica
-3. Iris versicolor
+1. Iris Setosa
+2. Iris Virginica
+3. Iris Versicolor
 
 Four features are were measured from each sample:
 1. Sepal length (cm)
@@ -37,11 +37,10 @@ Four features are were measured from each sample:
 
 Ronald A. Fischer (British statistician and biologist) used Anderson’s data and formulated linear discriminant analysis using the Iris dataset in his 1936 paper "The use of multiple measurements in taxonomic problems". 
 
-The goal of discriminant analysis is given four measurements a flower can be classified correctly. This means that given certain data outcome may be predictable.
-
+The goal of discriminant analysis is given four measurements a flower can be classified correctly. Data analytics has evolved significantly since Fischer's paper with the Iris dataset used for training and testing of algorithms and Machine Learning.  It is possible that with multivariate samples outcomes can be predicted.
 
 ## Dataset Analysis
-Is it possible to classify species of Iris (Setosa, Versicolor and Virginica) with given dimensions of sepal width, sepal length, petal width and petal length? Can classes be predicted given certain parameters?  This project will examine that possibility.
+Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Classes be predicted given multiple parameters.  This project examines univariate, multivariate and machine learning capabilities.   
 
 ### Import data:
 
@@ -54,18 +53,21 @@ Pandas dataframe describe() is used to analyse each data set.
 - Describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris.
 
 In the command line interface run Iris-1.py and observe the output.
-View the output below:
-
-From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and potentially predictable.  The dataset is relatively small (150 samples) however it is still complex and the next step is to graphically view the outputs.
 
 Petal width observations:
 - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
 - Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
-- Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using 
+- Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
+
+From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and therefore predictable.  The dataset is relatively small (150 samples) however it is complex and the next step is to graphically view the output to see if any further insights are gained.
 
 
 ### Graphics
+### Univariate Plots
+Run Iris 1.1.py for univariate analysis where we explore one variable
+Box plots and histograms
 
+### Multivariat Plots
 Iris-2.py uses graphics to aid analysis of the dataset using the seaborn visualisation library.  This should help identify trends for follow-up analysis.
 Seaborn pairplot is used to graphically compare the distributions.  A pairs plot provides  visualisation of both the distribution of single variables and relationships between two variables.    
 
@@ -80,7 +82,7 @@ In the command line interface run Iris-3.py.
 
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
 
-
+Multivariate plotting does 
 
 ## Applying Machine learning
 Apply machine learning techniques to validate the data and estimate accuracy.
@@ -93,9 +95,13 @@ KNN (K-Nearest Neighbor) is a simple supervised classification algorithm we can 
 
 
 ### Conclusion
+Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with multivariates. 
+
+However, the dataset could have be analysed almost as effectively with only one variable - petal width. Using multiple variables makes simple analysis more dificult to explain and comprehend.
+
 In ML, there is no specific model or an algorithm which can give 100% result to every single dataset. We need to understand the data before we apply any algorithm and build our model depending on the desired result. 
 
-
+Is data analytics making data more difficult to explain i.e. why?  
 
 Summary of investigation
 ## Supporting tables and graphics
