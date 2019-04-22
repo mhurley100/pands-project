@@ -43,6 +43,7 @@ Pandas dataframe describe() is used to analyse each data set.
 
 In the command line interface run Iris-1.py and observe the output.
 From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and therefore predictable.  
+![Statistics](https://user-images.githubusercontent.com/47399526/56513217-a81c4400-6529-11e9-8d57-04c483dc3372.PNG)
 
 Petal width stands out as an identifier for Iris class.  Petal width observations:
 - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
