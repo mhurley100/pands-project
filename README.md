@@ -42,7 +42,12 @@ Pandas dataframe describe() is used to analyse each data set.
 ### Observe data:
 
 In the command line interface run Iris-1.py and observe the output.
+<<<<<<< HEAD
 From the statistics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and therefore predictable.  
+=======
+From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and therefore predictable.  
+![Statistics](https://user-images.githubusercontent.com/47399526/56513217-a81c4400-6529-11e9-8d57-04c483dc3372.PNG)
+>>>>>>> ec8c77237a5246f9fd0d8e7d6af0a0fb895b6bbb
 
 Petal width stands out as an identifier for Iris class.  Petal width observations:
 - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
@@ -57,6 +62,10 @@ The dataset is relatively small (150 samples) however it is complex and the next
 Run Iris 1.1.py for univariate analysis where we explore one variable using box plots.  The box plots have vertical lines extending from the boxes (whiskers). These vertical lines indicate variability outside the upper and lower quartiles.
 Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  Univariate plots display (similar to the tables above) that petal width is the key identifier.
 
+![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511040-7e601e80-6523-11e9-8b19-5e16aff1d04a.PNG)
+![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511041-7ef8b500-6523-11e9-9342-3fc2a5792f96.PNG)
+![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511042-7ef8b500-6523-11e9-94f8-1e9a635c3191.PNG)
+![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511043-7ef8b500-6523-11e9-92aa-f1092187f5e8.PNG)
 ### Multivariate Plots
 In the command line interface run Iris-2.py.  Iris-2.py uses graphics to aid analysis and identification of trends within the dataset using the seaborn visualisation library.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.    
 
@@ -64,10 +73,11 @@ Iris-Setosa stands out as being easy to classify given the 4 dimensions.
 - 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clearly demonstrated in the scatter plot matrices.
  
 - Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
-  
+  ![Seaborn1_Distribution](https://user-images.githubusercontent.com/47399526/56510680-6b008380-6522-11e9-8319-2c838b5ff75c.PNG)
 In the command line interface run Iris-3.py.
 
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
+![Seaborn2_Distribution](https://user-images.githubusercontent.com/47399526/56510843-ee21d980-6522-11e9-92e1-92158d57c163.PNG)
 
 Multivariate plotting lines for all 4 dimensions enables visualisation of the relationship between the variables.  Again, the Setosa easily identifiable as being different.  Multivariate plotting is adding a new dimension and is a step above tables and univariate analysis.
 
