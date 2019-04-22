@@ -57,6 +57,10 @@ The dataset is relatively small (150 samples) however it is complex and the next
 Run Iris 1.1.py for univariate analysis where we explore one variable using box plots.  The box plots have vertical lines extending from the boxes (whiskers). These vertical lines indicate variability outside the upper and lower quartiles.
 Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  Univariate plots display (similar to the tables above) that petal width is the key identifier.
 
+![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511040-7e601e80-6523-11e9-8b19-5e16aff1d04a.PNG)
+![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511041-7ef8b500-6523-11e9-9342-3fc2a5792f96.PNG)
+![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511042-7ef8b500-6523-11e9-94f8-1e9a635c3191.PNG)
+![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511043-7ef8b500-6523-11e9-92aa-f1092187f5e8.PNG)
 ### Multivariate Plots
 In the command line interface run Iris-2.py.  Iris-2.py uses graphics to aid analysis and identification of trends within the dataset using the seaborn visualisation library.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.    
 
