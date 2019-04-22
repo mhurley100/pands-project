@@ -4,7 +4,7 @@
 
 1.   Introduction
 2.   Dataset Analysis
-3.   Critical Review
+3.   Dataset Review
 4.   Conclusion
 5.   References
 
@@ -27,7 +27,7 @@ Ronald A. Fischer (British statistician and biologist) used Anderson’s data an
 The goal of discriminant analysis is given four measurements a flower can be classified correctly. Data analytics has evolved significantly since Fischer's paper with the Iris dataset used for training and testing of algorithms and Machine Learning.  It is possible that with multivariate samples outcomes can be predicted with almost 100% accuracy.
 
 ## Dataset Analysis
-Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Classes be predicted given multiple parameters.  This project examines univariate, multivariate and machine learning capabilities.   
+Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Classes can be predicted given multiple parameters.  This project examines univariate, multivariate and machine learning capabilities.   
 
 ### Import data:
 
@@ -57,7 +57,7 @@ The dataset is relatively small (150 samples) however it is complex and the next
 Run Iris 1.1.py for univariate analysis where we explore one variable using box plots.  The box plots have vertical lines extending from the boxes (whiskers). These vertical lines indicate variability outside the upper and lower quartiles.
 Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  Univariate plots display (similar to the tables above) that petal width is the key identifier.
 
-### Multivariat Plots
+### Multivariate Plots
 In the command line interface run Iris-2.py.  Iris-2.py uses graphics to aid analysis and identification of trends within the dataset using the seaborn visualisation library.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.    
 
 Iris-Setosa stands out as being easy to classify given the 4 dimensions.
@@ -69,35 +69,30 @@ In the command line interface run Iris-3.py.
 
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
 
-Multivariate plotting lines up all 4 dimensions which enables visualisng the relationship of the variables against each other straightforward.  However no further insights are garnered as the Setosa is so easy to distinguish from viewing tables and univariate analysis.
-
-## Applying Machine learning
-Machine learning techniques are freely available to aid validation of the data and estimate accuracy.  There is a wealth of data online and as the Iris data set is so widely used it warrants mentioning.  
-
-KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice for assigning a class to new data point. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
+Multivariate plotting lines up all 4 dimensions which enables visualisng the relationship of the variables against each other straightforward.  Again the Setosa easily idetifiable as being different.  Mulivariate plotting is adds a new dimension and is a step above tables and univariate analysis.  
+### Applying Machine learning
+Machine learning techniques aid validation of the dataset and estimate accuracy.  KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice for assigning a class to new data point. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
 
  Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.
 
 Run Iris-4.py (program adapted from machinelearningmastery.com).  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.
-Accuracy is 90% which gives high confidence.  
+Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.
 
-### Critical Review
+### Dataset Review
 
-Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy. However, the Iris dataset could have been analysed almost as effectively with only one variable - petal width. Using multiple variables makes simple analysis more dificult to explain and critique.  Also it has been well established that a variety of classification models yield incredibly good results on Iris however Iris is predictable.  
+Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy. However, the Iris dataset can be analysed almost as effectively with only one variable - petal width. Using multiple variables makes simple analysis more dificult to explain and critique.  Also it has been established that a variety of classification methods yield good results on Iris however Iris is predictable and relatively easy to classify.  
 
-Data analysis is only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result instead of applying complex machine learning models to try to predict classification?  It may be that there are issues with the underlying data.  Two of the three samples were picked on the same day - this is a qualitative variable which is not factored into any of the analytical tools.
+Data analysis on a dataset is only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result instead of applying complex machine learning models to try to predict classification?  It may be that there are issues with the underlying data.  Two of the three samples were picked on the same day - this is a qualitative variable which is not factored into any of the analytical tools.
 
 ### Conclusion
 
+There are relatively few features in the Iris dataset and two of the classes are much more correlated than the third.  Setosa is very easily separated by the petal width and petal length. Therefore data modelling lends itself in this case to good results.  We can predict Setosa with almost 100% accuracy given known data points.
+
+
 In Machine Learning, there is no specific model or an algorithm which can give 100% result to every single dataset. We need to understand the data before we apply any algorithm and build our model depending on the desired result. 
 
-Secondly, we can observe that there are relatively few features in the Iris dataset. Moreover, if you look at the dataset description you can see that two of the features are very highly correlated with the class outcomes (petal width and petal length).
+More basic modelling is sufficient as the Iris dataset is predictable.  However machine learning has undoubted benefits given complexity.
 
-These correlation values are linear, single-feature correlations, which indicates that one can most likely apply a linear model and observe good results.
-
-Taking these facts into account, that (a) there are few features to begin with and (b) that there are high  correlations with class, would all point to a less complex predictive modelling.
-
-     |
 ##  References
 - [1] Edgar Anderson (1935). "The irises of the Gaspé Peninsula". Bulletin of the American Iris Society. 59: 2–5.
 - https://www.kaggle.com/uciml/iris
@@ -111,4 +106,4 @@ Taking these facts into account, that (a) there are few features to begin with a
 - https://seaborn.pydata.org/
 - http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf
 - https://machinelearningmastery.com
--https://www.tutorialspoint.com/
+- https://www.tutorialspoint.com/
