@@ -68,6 +68,7 @@ Iris-Setosa stands out as being easy to classify given the 4 dimensions.
 In the command line interface run Iris-3.py.
 
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
+![Seaborn2_Distribution](https://user-images.githubusercontent.com/47399526/56510843-ee21d980-6522-11e9-92e1-92158d57c163.PNG)
 
 Multivariate plotting lines up all 4 dimensions which enables visualisng the relationship of the variables against each other straightforward.  Again the Setosa easily idetifiable as being different.  Mulivariate plotting is adds a new dimension and is a step above tables and univariate analysis.  
 ### Applying Machine learning
