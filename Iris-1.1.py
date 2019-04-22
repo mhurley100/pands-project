@@ -5,10 +5,10 @@
 
 # Load Pandas, pandas plotting, seaborn, matplotlib and csv libraries
 import pandas as pd
-from pandas.plotting import scatter_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 import csv
+
 
 # Load the dataset
 # Modified using python tutorial 7.2.  [https://docs.python.org/3/tutorial/inputoutput.html]
@@ -18,9 +18,18 @@ with open("Iris.csv", "r") as f:
 # Import file as csv and the headers or "names" are assigned.  Modified from [https://stackoverflow.com/a/47111317]
   dataset = pd.read_csv(f)
 
-# Adapted from [https://seaborn.pydata.org/tutorial/categorical.html]
-sns.catplot(data=dataset, orient="h", kind="box");
-# Adapted from [https://towardsdatascience.com/introduction-to-data-visualization-in-python-89a54c97fbed]
-dataset.plot.hist(subplots=True, layout=(2,2), figsize=(10, 10), bins=20)
-# Display the charts
+# Adapted from [https://www.tutorialspoint.com/seaborn/seaborn_quick_guide.htm] and
+# https://stackoverflow.com/a/42409861
+
+sns.boxplot(x="class", y="sepal length", data=dataset).set_title('Compare Sepal Length Distribution')
+# Show the plot
+plt.show()
+sns.boxplot(x="class", y="sepal width", data=dataset).set_title('Compare Sepal Width Distribution')
+# Show the plot
+plt.show()
+sns.boxplot(x="class", y="petal length", data=dataset).set_title('Compare Petal Length Distribution')
+# Show the plot
+plt.show()
+sns.boxplot(x="class", y="petal width", data=dataset).set_title('Compare Petal Width Distribution')
+# Show the plot
 plt.show()

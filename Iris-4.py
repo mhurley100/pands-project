@@ -1,23 +1,74 @@
-# Validate from petal width Iris species classification
+# Adapted from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
 
-class Rectangle:
-  def __init__(self, x1, y1, x2, y2):
-    self.x1 = x1
-    self.y1 = y1
-    self.x2 = x2
-    self.y2 = y2
+# Load libraries
+import pandas as pd
+from pandas.plotting import scatter_matrix
+import matplotlib.pyplot as plt
+from sklearn import model_selection
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+import csv
 
-  def overlaps(self, other):
-    if self.x1 < other.x2 and self.x2 > other.x1 and self.y2 > other.y1 and self.y1 < other.y2:
-      return True
-    else:
-      return False
+# Load the dataset
+# Modified using python tutorial 7.2.  [https://docs.python.org/3/tutorial/inputoutput.html]
+# Open "Iris.csv" saved within this folder and call it f:
+with open("Iris.csv", "r") as f:
 
-r1 = Rectangle(1, 3, 5, 6)
-r2 = Rectangle(3, 2, 7, 4)
+# Import file as csv and the headers or "names" are assigned.  Modified from [https://stackoverflow.com/a/47111317]
+  dataset = pd.read_csv(f)
 
-print(r1.x1, r1.y1, r1.x2, r1.y2)
-print(r2.x1, r2.y1, r2.x2, r2.y2)
+# Adapted from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
+# Split-out validation dataset
+array = dataset.values
+X = array[:,0:4]
+Y = array[:,4]
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 
-print(r1.overlaps(r2))
-print(r2.overlaps(r1))
+# Test options and evaluation metric
+seed = 7
+scoring = 'accuracy'
+
+# Spot Check Algorithms
+models = []
+models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
+models.append(('LDA', LinearDiscriminantAnalysis()))
+models.append(('KNN', KNeighborsClassifier()))
+models.append(('CART', DecisionTreeClassifier()))
+models.append(('NB', GaussianNB()))
+models.append(('SVM', SVC(gamma='auto')))
+# evaluate each model in turn
+results = []
+names = []
+for name, model in models:
+	kfold = model_selection.KFold(n_splits=10, random_state=seed)
+	cv_results = model_selection.cross_val_score(model, X_train, Y_train, cv=kfold, scoring=scoring)
+	results.append(cv_results)
+	names.append(name)
+	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
+	print(msg)
+
+    
+# Make predictions on validation dataset
+knn = KNeighborsClassifier()
+knn.fit(X_train, Y_train)
+predictions = knn.predict(X_validation)
+print(accuracy_score(Y_validation, predictions))
+print(confusion_matrix(Y_validation, predictions))
+print(classification_report(Y_validation, predictions))
+
+# Make predictions on validation dataset
+knn = KNeighborsClassifier()
+knn.fit(X_train, Y_train)
+predictions = knn.predict(X_validation)
+print(accuracy_score(Y_validation, predictions))
+print(confusion_matrix(Y_validation, predictions))
+print(classification_report(Y_validation, predictions))

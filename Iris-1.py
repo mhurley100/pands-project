@@ -23,7 +23,6 @@ with open("Iris.csv", "r") as f:
 print(dataset.groupby('class').size())
 
 #Create 3 DataFrames for each class of Iris
-
 # Modified from [https://www.kaggle.com/abhishekkrg/python-iris-data-visualization-and-explanation]
 # Name each dataset - Setosa is the class Iris Setosa
 setosa = dataset[dataset['class']=='Iris-setosa']
