@@ -44,7 +44,7 @@ Observations of the dataset:
 - It is small - only 150 rows and 4 features.
 - It appears straightforward with no data missing.
 
-There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries.  I chose saved as a csv file within this repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using https://bitbucket.org/astanin/python-tabulate [14] & https://pypi.org/project/tabulate [13]  The result of this research is as follows:
+There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries.  I chose to save as a csv file within this repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using https://bitbucket.org/astanin/python-tabulate [14] & https://pypi.org/project/tabulate [13]  The result of this research is as follows:
 
 |Setosa    |   sepal length |   petal width |   sepal width |   petal length |
 |----------|----------------|---------------|---------------|----------------|
@@ -80,7 +80,7 @@ There are so many online sources, however many sites have the same repeated anal
 | max      |        7.9     |      3.8      |      6.9      |        2.5     |
 
 
- Anaconda's Pandas tool is very powerful as it manipulates, analyses and performs statistical analysis with minimal coding.  Iris-1.py contains python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() was used to perform statistical analysis.  Below are the programs used to analyse the dataset:
+ Anaconda's Pandas tool is the tool of choice for statistical analysis.  It is very powerful as it manipulates, analyses and performs statistical analysis with minimal coding.  Iris-1.py contains pandas python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() was used to perform this analysis.  Below are the programs used to analyse the dataset:
 
 1.  The first 20 lines are printed by running the following line of code on the dataset:
     -(print(dataset.head(20)))
@@ -88,16 +88,17 @@ There are so many online sources, however many sites have the same repeated anal
     -print(dataset.groupby('class').size())
 3.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
     - e.g.setosa is separated into its class as follows: dataset[dataset['class']=='Iris-setosa']. 
-4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris (using tabulate).
+4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris (using tabulate to enable to paste into github).
     -print(tabulate(setosa.describe(), headers,tablefmt="github"))
 
 ### Data Analysis:
-From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and therefore potentially predictable.  
-Petal width stands out as an identifier for Iris class.  
-Petal width observations:
-- Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
-- Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
-- Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
+The standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and as a result potentially predictable.
+#### Observations:
+- Petal width stands out as an identifier for Iris class.  
+- Petal width observations:
+  - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
+  - Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
+  - Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
 
 
 ### Univariate Plots
