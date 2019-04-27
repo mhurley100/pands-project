@@ -49,6 +49,38 @@ Observations of the dataset:
 
 There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries but I chose to save as a csv file on the repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using https://bitbucket.org/astanin/python-tabulate [14] & https://pypi.org/project/tabulate [13] 
 
+|       |   sepal length |   petal width |   sepal width |   petal length |
+|-------|----------------|---------------|---------------|----------------|
+| count |       50       |     50        |     50        |       50       |
+| mean  |        5.006   |      3.418    |      1.464    |        0.244   |
+| std   |        0.35249 |      0.381024 |      0.173511 |        0.10721 |
+| min   |        4.3     |      2.3      |      1        |        0.1     |
+| 25%   |        4.8     |      3.125    |      1.4      |        0.2     |
+| 50%   |        5       |      3.4      |      1.5      |        0.2     |
+| 75%   |        5.2     |      3.675    |      1.575    |        0.3     |
+| max   |        5.8     |      4.4      |      1.9      |        0.6     |
+|       |   sepal length |   petal width |   sepal width |   petal length |
+|-------|----------------|---------------|---------------|----------------|
+| count |      50        |     50        |     50        |      50        |
+| mean  |       5.936    |      2.77     |      4.26     |       1.326    |
+| std   |       0.516171 |      0.313798 |      0.469911 |       0.197753 |
+| min   |       4.9      |      2        |      3        |       1        |
+| 25%   |       5.6      |      2.525    |      4        |       1.2      |
+| 50%   |       5.9      |      2.8      |      4.35     |       1.3      |
+| 75%   |       6.3      |      3        |      4.6      |       1.5      |
+| max   |       7        |      3.4      |      5.1      |       1.8      |
+|       |   sepal length |   petal width |   sepal width |   petal length |
+|-------|----------------|---------------|---------------|----------------|
+| count |       50       |     50        |     50        |       50       |
+| mean  |        6.588   |      2.974    |      5.552    |        2.026   |
+| std   |        0.63588 |      0.322497 |      0.551895 |        0.27465 |
+| min   |        4.9     |      2.2      |      4.5      |        1.4     |
+| 25%   |        6.225   |      2.8      |      5.1      |        1.8     |
+| 50%   |        6.5     |      3        |      5.55     |        2       |
+| 75%   |        6.9     |      3.175    |      5.875    |        2.3     |
+| max   |        7.9     |      3.8      |      6.9      |        2.5     |
+
+
  Anaconda's Pandas tool is very powerful as it manipulates, analyses the data and performs statistical analysis with minimal coding.  Python programs were used to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() performs statistical analysis.
 
 Program outputs (Iris-1.py):
