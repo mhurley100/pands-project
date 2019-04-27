@@ -44,7 +44,7 @@ Observations of the dataset:
 - It is small - only 150 rows and 4 features.
 - It appears straightforward with no data missing.
 
-There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries.  I chose to save as a csv file within this repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using https://bitbucket.org/astanin/python-tabulate [14] & https://pypi.org/project/tabulate [13]  The result of this research is as follows:
+There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries.  I chose to save as a csv file within this repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using (itbucket.org [14] & pypi.org/project/tabulate [13])  The result of this research is as follows:
 
 |Setosa    |   sepal length |   petal width |   sepal width |   petal length |
 |----------|----------------|---------------|---------------|----------------|
@@ -88,7 +88,7 @@ There are so many online sources, however many sites have the same repeated anal
     -print(dataset.groupby('class').size())
 3.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
     - e.g.setosa is separated into its class as follows: dataset[dataset['class']=='Iris-setosa']. 
-4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris (using tabulate to enable to paste into github).
+4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris using tabulate to enable to paste into github as follows:
     -print(tabulate(setosa.describe(), headers,tablefmt="github"))
 
 ### Data Analysis:
@@ -102,18 +102,16 @@ The standard deviation for all three species of Iris is low therefore the result
 
 
 ### Univariate Plots
-Univariate plots help understand each variable independently. It looks at the interactions between variables.  There is a wide array of plotting resources available online from historgrams, barcharts, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by  outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
+Univariate plots help understand each variable independently by analysing interactions between variables.  There is a wide array of plotting resources available online from historgrams, barcharts, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
 
 Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools for Iris-1.1.py.  
 
-Pandas, seaborn, matplotlib and csv libraries are imported.  Pandas analyses the data and performs statistical analysis.  Pandas plots graphs with the matplotlib library. Seaborn libraries are used to compare the distributions of each species of Iris using tutorialspoint.com[7] and stackoverflow.com[5] as resources.
-
-Run Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  
+Pandas, seaborn, matplotlib and csv libraries are imported.  Run Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  
 
 Program outputs:
-1.  Box plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length):
+1.  Box plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length) with the relevant header included:
     - sns.boxplot(x="class", y="sepal length", data=dataset).set_title('Compare Sepal Length Distribution')
-2. Violin plot for each variable (petal length, petal width, sepal length and petal width sepal length).  E.g sepal length below:
+2. Violin plot for each variable (petal length, petal width, sepal length and petal width sepal length).  E.g sepal length below with the relevant header included:
     - sns.violinplot(x="class", y="sepal length", data=dataset, size=6).set_title('Compare Sepal Length Distribution')
 3.  Show the plot.  The box plot is displayed using the following code:
     - plt.show()
@@ -129,9 +127,9 @@ The box plots have vertical lines extending from the boxes. These vertical lines
 
 
 ### Multivariate Plots
-Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], http://www.learn4master.com [12] and python.org [6]are used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots analyse the relationship between each variable and also explain the relationship between variables.  
+Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], http://www.learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots were used to analyse the relationship between each variable and also explain the relationship between variables.  
 
-Pandas, seaborn, matplotlib and csv libraries are imported.  Pandas analyses the data and performs statistical analysis.  Pandas plots graphs with the matplotlib library. Seaborn libraries are used to compare the distributions of each species of Iris using seaborn.pydata.org,kaggle.com[7] and stackoverflow.com[5] as resources.
+Pandas, seaborn, matplotlib and csv libraries are imported with seaborn.pydata.org,kaggle.com[7] and stackoverflow.com[5] used as resources.
 
 In the command line interface run Iris-2.py & Iris-3.py.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.
 
