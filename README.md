@@ -1,5 +1,15 @@
 # Programming and Scripting Project 2019
 
+# Iris Dataset Analysis
+
+This project investigates and analyses the Iris data set using python.
+
+Project plan is as follows:
+1. Research the Iris Dataset listing references to evidence that research.
+2. Use python to analyse the Iris data set.
+3. Summarise finding using supporting tables and graphics as relevant.
+4. Find an interesting angle to pursue and investigate.
+
 ## Table of Contents:
 
 1.   Introduction
@@ -9,6 +19,7 @@
 5.   References
 
 ## Introduction
+
 Edgar Anderson collected data on 3 different Iris species on the Gaspe Peninsula, Quebec, Canada.
 Two of the three species were collected "all from the same pasture and picked on the same day and measured at the same time by the same person with the same apparatus".[1] 
 The data set comprises 50 samples from each of three species of Iris:
@@ -22,28 +33,35 @@ Four features are were measured from each sample:
 3. Petal length (cm)
 4. Petal width (cm) 
 
-Ronald A. Fischer (British statistician and biologist) used Anderson’s data and formulated linear discriminant analysis using the Iris dataset in his 1936 paper "The use of multiple measurements in taxonomic problems". 
-
-The goal of discriminant analysis is given four measurements a flower can be classified correctly. Data analytics has evolved significantly since Fischer's paper with the Iris dataset used for training and testing of algorithms and Machine Learning.  It is possible that with multivariate samples outcomes can be predicted with almost 100% accuracy.
+Ronald A. Fischer (British statistician and biologist) used Anderson’s data and formulated linear discriminant analysis using the Iris dataset in his 1936 paper "The use of multiple measurements in taxonomic problems". The goal of discriminant analysis is given four measurements a flower can be classified correctly. Data analytics has evolved significantly since Fischer's paper with the Iris dataset used for training and testing of algorithms and Machine Learning.  It appears possible that with multivariate samples outcomes can be predicted with very high levels of accuracy.
 
 ## Dataset Analysis
 Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Classes can be predicted given multiple parameters.  This project examines univariate, multivariate and machine learning capabilities.   
 
-### Import data:
+Iris-1.py is a python program that calculates basic statistics on the dataset.  The Iris raw data is imported into python as a csv file.  
 
-Iris-1.py is a python program that calculates statistics on the dataset.  The Iris raw data is imported into python as a csv file.  The Iris flowers are grouped into their respective classes (Setosa, Versicolor and Virginica) and separated by petal width, petal length, sepal width and sepal length.  Each class of Iris within the data set is given a name or class:  
-- Iris-Setosa
-- Iris-Virginica
-- Iris-Versicolor
+Observations of the dataset:
+- It is small - only 150 rows and 4 features.
+- It appears straightforward with no data missing.
 
-Pandas dataframe describe() is used to analyse each data set.
-- Describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris.
+#### Dataset Analysis
+There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4]as learning resources and training tools for Iris-1.py.  Stackoverflow.com[5] is as always an invaluable resource for program refinement.
+The Iris data set can be downloaded from multiple libraries but I chose to save as a csv file on the repository. 
+
+ Anaconda's Pandas tool is very powerful as it manipulates and analyses the data and performs statistical analysis.  I used python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() performs statistical analysis.
+
+Program outputs (Iris-1.py):
+1.  The first 20 lines are printed by running the following line of code on the dataset:
+    -(print(dataset.head(20)))
+2.  The dataset is printed, grouped by class (species) and sample size using the following code:
+    -print(dataset.groupby('class').size())
+3.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
+- e.g.setosa - dataset[dataset['class']=='Iris-setosa']. 
+4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris (with header printed on a newline -stackoverflow.com[5]).
+    -print('Iris Setosa',newline, setosa.describe())
 
 ### Observe data:
-
-In the command line interface run Iris-1.py and observe the output.
-
-From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indiciate that the data samples are reasonably close to the mean and therefore predictable.  
+From the statisics generated in Iris-1.py it is evident that the standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and therefore predictable.  
 ![Statistics](https://user-images.githubusercontent.com/47399526/56513217-a81c4400-6529-11e9-8d57-04c483dc3372.PNG)
 
 Petal width stands out as an identifier for Iris class.  Petal width observations:
@@ -51,12 +69,9 @@ Petal width stands out as an identifier for Iris class.  Petal width observation
 - Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
 - Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
 
-The dataset is relatively small (150 samples) however it is complex and the next step is to graphically view the output to see if any further insights are gained.
 
-
-### Graphics
 ### Univariate Plots
-Run Iris 1.1.py for univariate analysis where we explore one variable using box plots.  The box plots have vertical lines extending from the boxes (whiskers). These vertical lines indicate variability outside the upper and lower quartiles.
+Run Iris 1.1.py for univariate analysis where one variable is explored using box plots.  The box plots have vertical lines extending from the boxes (whiskers). These vertical lines indicate variability outside the upper and lower quartiles.
 Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  Univariate plots display (similar to the tables above) that petal width is the key identifier.
 
 ![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511040-7e601e80-6523-11e9-8b19-5e16aff1d04a.PNG)
@@ -93,6 +108,8 @@ Data analytics has evolved with the advent of technology and analytical tools th
 Data analysis on a dataset is only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result instead of applying complex machine learning models to try to predict classification?  It may be that there are issues with the underlying data.  Two of the three samples were picked on the same day - this is a qualitative variable which is not factored into any of the analytical tools.
 
 ### Conclusion
+The dataset is relatively small (150 samples) however it is complex and the next step is to graphically view the output to see if any further insights are gained.
+
 
 There are relatively few features in the Iris dataset and two of the classes are much more correlated than the third.  Setosa is very easily separated by the petal width and petal length. Therefore, data modelling lends itself in this case to good results.  We can predict Setosa with almost 100% accuracy given known data points.
 
@@ -103,10 +120,12 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 
 ##  References
 - [1] Edgar Anderson (1935). "The irises of the Gaspé Peninsula". Bulletin of the American Iris Society. 59: 2–5.
-- https://www.kaggle.com/uciml/iris
+-[2] [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
+-[3] [https://docs.python.org/3/tutorial/inputoutput.html]
+-[4] https://www.kaggle.com/uciml/iris
 - http://archive.ics.uci.edu/ml/index.php
 - https://www.python.org/,
-- https://stackoverflow.com/,
+-[5] https://stackoverflow.com/,
 - https://matplotlib.org/
 - http://www.numpy.org/
 - https://towardsdatascience.com
