@@ -6,6 +6,7 @@
 # Load Pandas and csv libraries
 import pandas as pd
 import csv
+from tabulate import tabulate
 
 # Load the dataset
 # Modified using python tutorial 7.2.  [https://docs.python.org/3/tutorial/inputoutput.html]
@@ -39,3 +40,8 @@ print('Iris Setosa',newline, setosa.describe())
 print('Iris Versicolor',newline, versicolor.describe())
 # Print the class first ("Iris Virginica"), then use the pandas dataframe describe() to analyse the series
 print('Iris Virginica',newline, virginica.describe())
+
+# For 
+print(tabulate(setosa.describe(), 'Set',tablefmt="github"))
+print(tabulate(versicolor.describe(), 'Ver',tablefmt="github"))
+print(tabulate(virginica.describe(), 'Vir',tablefmt="github"))

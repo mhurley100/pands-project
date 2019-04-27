@@ -13,9 +13,9 @@ Project plan is as follows:
 ## Table of Contents:
 1.   Introduction
 2.   Dataset Analysis
--       Dataset Statistics
--       Dataset Univariate plots
--       Dataset Mulitvariate plots
+    * Dataset Statistics
+    * Dataset Univariate plots
+    * Dataset Mulitvariate plots
 3.   Insights and Comparative Analysis
 4.   Conclusion
 5.   References
@@ -87,7 +87,7 @@ Program outputs:
 2. Violin plot for each variable (petal length, petal width, sepal length and petal width sepal length).  E.g sepal length below:
     - sns.violinplot(x="class", y="sepal length", data=dataset, size=6).set_title('Compare Sepal Length Distribution')
 3.  Show the plot.  The box plot is displayed using the following code:
-    plt.show()
+    - plt.show()
 
 ### Data Analysis:
 The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  A violin plot shows the density of the data.  Using violin plots Setosa stands out due to its density across all 4 variables.  This makes its easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
@@ -100,7 +100,7 @@ The box plots have vertical lines extending from the boxes. These vertical lines
 
 
 ### Multivariate Plots
-Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9]and python.org [6]are used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots analyse the relationship between each variable and also explain the relationship between variables.  
+Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], http://www.learn4master.com [12] and python.org [6]are used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots analyse the relationship between each variable and also explain the relationship between variables.  
 
 Pandas, seaborn, matplotlib and csv libraries are imported.  Pandas analyses the data and performs statistical analysis.  Pandas plots graphs with the matplotlib library. Seaborn libraries are used to compare the distributions of each species of Iris using seaborn.pydata.org,kaggle.com[7] and stackoverflow.com[5] as resources.
 
@@ -132,15 +132,13 @@ This graphs a scatterplot for each pairwise relationship.  Again Setosa is very 
 Multivariate plotting lines for all 4 dimensions enables visualisation of the relationship between the variables.  Again, the Setosa easily identifiable as being different.  Multivariate plotting is adding a new dimension and is a step above tables and univariate analysis.
 
 ### Applying Machine learning
-Machine learning techniques aid validation of the dataset and estimate accuracy.  
-Machine learning is about learning some properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set into two- one of those sets the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
+Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set into two- one of those sets the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
 
 KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice for assigning a class to new data point. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
 
  Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.
 
-Run Iris-4.py (program adapted from machinelearningmastery.com[2]).  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.
-Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.
+Run Iris-4.py (program adapted from machinelearningmastery.com[2]).  
 
 Pandas, pandas plotting, matplotlib, csv and several sklearn libraries are imported.  
 
@@ -166,12 +164,13 @@ print(classification_report(Y_validation, predictions))
 6. Predict Iris class or species:
 knn = neighbors.KNeighborsClassifier(n_neighbors=1)
 knn.fit(X, y)
-7. Predict Iris Species (4cm x 4cm sepal and 4cm x 2cm petal?
+7. Predict Iris Species (4cm x 4cm sepal and 4cm x 2cm petal)
 print(iris.target_names[knn.predict([[3, 5, 3, 3]])])
 
 ### Data Analysis:
-Àccuracy is 0.9 or 90%. The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
-KNN can predict an Iris class if data on the 4 variables is provided.
+KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.
+The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
+KNN can predict an Iris class if data on the 4 variables with the data provided.
 
 ## Insights and Comparative Analysis
 Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy. However, the Iris dataset can be analysed almost as effectively with only one variable - petal width. Using multiple variables makes simple analysis more difficult to explain and critique.  Also, it has been established that a variety of classification methods yield good results on Iris however Iris is predictable and relatively easy to classify.  
@@ -190,19 +189,15 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 
 ##  References
 - [1] Edgar Anderson (1935). "The irises of the Gaspé Peninsula". Bulletin of the American Iris Society. 59: 2–5.
--[2] [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
--[3] [https://docs.python.org/3/tutorial/inputoutput.html]
--[4] https://www.kaggle.com/uciml/iris
-- http://archive.ics.uci.edu/ml/index.php
--[6] https://www.python.org/,
--[5] https://stackoverflow.com/,
--[8] https://matplotlib.org/
-- http://www.numpy.org/
-- https://towardsdatascience.com
-- https://pandas.pydata.org/
--[9] https://seaborn.pydata.org/
-- http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf
-- https://machinelearningmastery.com
+- [2] https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+- [3] https://docs.python.org/3/tutorial/inputoutput.html
+- [4] https://www.kaggle.com/uciml/iris
+- [5] https://stackoverflow.com/
+- [6] https://www.python.org/
 - [7] https://www.tutorialspoint.com/
--[10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html
--[11] https://scipy-lectures.org/packages/scikit-learn/index.html
+- [8] https://matplotlib.org/
+- [9] https://seaborn.pydata.org/
+- [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html
+- [11] https://scipy-lectures.org/packages/scikit-learn/index.html
+- [12] http://www.learn4master.com/machine-learning/visualize-iris-dataset-using-python
+- [13] https://pypi.org/project/tabulate/
