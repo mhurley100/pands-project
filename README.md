@@ -11,12 +11,12 @@ Project plan is as follows:
 4. Find an interesting angle to pursue and investigate.
 
 ## Table of Contents:
-
 1.   Introduction
 2.   Dataset Analysis
-3.   Dataset Univariate plots
-4.   Dataset Mulitvariate plots
-5.   Insights and Comparative Findings
+    - Dataset Statistics
+    - Dataset Univariate plots
+    - Dataset Mulitvariate plots
+3.   Insights and Comparative Findings
 4.   Conclusion
 5.   References
 
@@ -38,7 +38,7 @@ Four features are were measured from each sample:
 Ronald A. Fischer (British statistician and biologist) used Anderson’s data and formulated linear discriminant analysis using the Iris dataset in his 1936 paper "The use of multiple measurements in taxonomic problems". The goal of discriminant analysis is given four measurements a flower can be classified correctly. Data analytics has evolved significantly since Fischer's paper with the Iris dataset used for training and testing of algorithms and Machine Learning.  It appears possible that with multivariate samples outcomes can be predicted with very high levels of accuracy.
 
 ## Dataset Analysis
-Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Classes can be predicted given multiple parameters.  This project examines univariate, multivariate and machine learning capabilities.   
+Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Can classes can be predicted given multiple parameters?  This project examines statistical, univariate, multivariate and machine learning capabilities.   
 
 #### Statistics
 Iris-1.py is a python program that calculates basic statistics on the dataset.  The Iris raw data is imported into python as a csv file.  
@@ -76,7 +76,7 @@ Petal width stands out as an identifier for Iris class.  Petal width observation
 Univariate plots help understand each variable independently. There is a wide array of plotting resources available online from historgrams, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by  outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) matplotlib.org[8].  I used Seaborn as has the added advantage of colour and sizing options.    
 
 #### Dataset Analysis
-Machinelearningmastery.com [2], tutorialspoint.com [7], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools for Iris-1.1.py.  
+Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools for Iris-1.1.py.  
 
 Pandas, seaborn, matplotlib and csv libraries are imported.  Pandas analyses the data and performs statistical analysis.  Pandas plots graphs with the matplotlib library. Seaborn libraries are used to compare the distributions of each species of Iris using tutorialspoint.com[7] and stackoverflow.com[5] as resources.
 
@@ -102,8 +102,25 @@ The box plots have vertical lines extending from the boxes. These vertical lines
 
 
 ### Multivariate Plots
-In the command line interface run Iris-2.py.  Iris-2.py uses graphics to aid analysis and identification of trends within the dataset using the seaborn visualisation library.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.    
+Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9]and python.org [6]are used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots analyse the relationship between each variable to understand how to explain a relationship between variables.  
 
+Pandas, seaborn, matplotlib and csv libraries are imported.  Pandas analyses the data and performs statistical analysis.  Pandas plots graphs with the matplotlib library. Seaborn libraries are used to compare the distributions of each species of Iris using seaborn.pydata.org,kaggle.com[7] and stackoverflow.com[5] as resources.
+
+In the command line interface run Iris-2.py.  Iris-2.py uses graphics to aid analysis and identification of trends within the dataset using the seaborn visualisation library.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.
+
+Program outputs:
+1.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
+    - e.g.setosa - dataset[dataset['class']=='Iris-setosa']. 
+2.  Pair plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length):
+    - g = sns.pairplot(dataset, hue='class', markers=["o", "s", "D"])
+3.  Use seaborn pairgrid functionality on the dataset:
+g = sns.PairGrid(dataset, hue="class", palette="Set2", hue_kws={"marker": ["o", "s", "D"]})
+Generate scatter plot using seaborn:
+g = g.map(plt.scatter, linewidths=1, edgecolor="w", s=40)
+3.  Show the plot.  The box plot is displayed using the following code:
+    plt.show()
+
+### Observe data:
 Iris-Setosa stands out as being easy to classify given the 4 dimensions.
 - 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clearly demonstrated in the scatter plot matrices.
  
@@ -121,7 +138,7 @@ Machine learning techniques aid validation of the dataset and estimate accuracy.
 
  Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.
 
-Run Iris-4.py (program adapted from machinelearningmastery.com).  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.
+Run Iris-4.py (program adapted from machinelearningmastery.com[2]).  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.
 Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.
 
 ### Dataset Review
@@ -153,7 +170,7 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 - http://www.numpy.org/
 - https://towardsdatascience.com
 - https://pandas.pydata.org/
-- https://seaborn.pydata.org/
+-[9] https://seaborn.pydata.org/
 - http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf
 - https://machinelearningmastery.com
--[7] https://www.tutorialspoint.com/
+- [7] https://www.tutorialspoint.com/
