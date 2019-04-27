@@ -46,3 +46,17 @@ predictions = knn.predict(X_validation)
 print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
 print(classification_report(Y_validation, predictions))
+
+# Predict a species of Iris [ Adapted from https://scipy-lectures.org/packages/scikit-learn/index.html]:
+# Import the datasets
+from sklearn import neighbors, datasets
+# Name the Iris dataset 'Iris'
+iris = datasets.load_iris()
+# X is the data and Y is target
+X, y = iris.data, iris.target
+# Use KNN to classify Iris Species
+knn = neighbors.KNeighborsClassifier(n_neighbors=1)
+# Fit and transform the data
+knn.fit(X, y)
+# What kind of iris has 4cm x 4cm sepal and 3cm x 3cm petal?
+print(iris.target_names[knn.predict([[4, 4, 3, 3]])])
