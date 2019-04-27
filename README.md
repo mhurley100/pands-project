@@ -117,7 +117,13 @@ Program outputs:
     - plt.show()
 
 ### Data Analysis:
-The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  A violin plot shows the density of the data.  Using violin plots Setosa stands out due to its density across all 4 variables.  This makes its easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
+The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  
+![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853821-c4065800-6924-11e9-825b-b115ecdb9237.PNG)
+![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853822-c4065800-6924-11e9-9fc5-258eb8ed6d89.PNG)
+![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853824-c4065800-6924-11e9-9597-7c876934d9fe.PNG)
+![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853825-c4065800-6924-11e9-83db-75601c07d4b2.PNG)
+
+Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  A violin plot shows the density of the data.  Using violin plots Setosa stands out due to its density across all 4 variables.  This makes its easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
 
 ![Violin_PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853760-0e3b0980-6924-11e9-9b16-0336e40df358.PNG)
 ![Violin_PW_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853761-0e3b0980-6924-11e9-93a0-d75f1539c8a6.PNG)
