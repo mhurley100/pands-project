@@ -120,11 +120,6 @@ Program outputs:
 The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  A violin plot shows the density of the data.  Using violin plots Setosa stands out due to its density across all 4 variables.  This makes its easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
 
 
-![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511040-7e601e80-6523-11e9-8b19-5e16aff1d04a.PNG)
-![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511041-7ef8b500-6523-11e9-9342-3fc2a5792f96.PNG)
-![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511042-7ef8b500-6523-11e9-94f8-1e9a635c3191.PNG)
-![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511043-7ef8b500-6523-11e9-92aa-f1092187f5e8.PNG)
-
 
 ### Multivariate Plots
 Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], http://www.learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots were used to analyse the relationship between each variable and also explain the relationship between variables.  
