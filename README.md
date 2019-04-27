@@ -14,7 +14,9 @@ Project plan is as follows:
 
 1.   Introduction
 2.   Dataset Analysis
-3.   Dataset Review
+3.   Dataset Univariate plots
+4.   Dataset Mulitvariate plots
+5.   Insights and Comparative Findings
 4.   Conclusion
 5.   References
 
@@ -38,17 +40,17 @@ Ronald A. Fischer (British statistician and biologist) used Anderson’s data an
 ## Dataset Analysis
 Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Classes can be predicted given multiple parameters.  This project examines univariate, multivariate and machine learning capabilities.   
 
+#### Statistics
 Iris-1.py is a python program that calculates basic statistics on the dataset.  The Iris raw data is imported into python as a csv file.  
 
 Observations of the dataset:
 - It is small - only 150 rows and 4 features.
 - It appears straightforward with no data missing.
 
-#### Dataset Analysis
 There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4]as learning resources and training tools for Iris-1.py.  Stackoverflow.com[5] is as always an invaluable resource for program refinement.
 The Iris data set can be downloaded from multiple libraries but I chose to save as a csv file on the repository. 
 
- Anaconda's Pandas tool is very powerful as it manipulates and analyses the data and performs statistical analysis.  I used python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() performs statistical analysis.
+ Anaconda's Pandas tool is very powerful as it manipulates and analyses the data and performs statistical analysis with efficient coding.  I used python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() performs statistical analysis.
 
 Program outputs (Iris-1.py):
 1.  The first 20 lines are printed by running the following line of code on the dataset:
@@ -56,7 +58,7 @@ Program outputs (Iris-1.py):
 2.  The dataset is printed, grouped by class (species) and sample size using the following code:
     -print(dataset.groupby('class').size())
 3.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
-- e.g.setosa - dataset[dataset['class']=='Iris-setosa']. 
+    - e.g.setosa - dataset[dataset['class']=='Iris-setosa']. 
 4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris (with header printed on a newline -stackoverflow.com[5]).
     -print('Iris Setosa',newline, setosa.describe())
 
@@ -71,13 +73,34 @@ Petal width stands out as an identifier for Iris class.  Petal width observation
 
 
 ### Univariate Plots
-Run Iris 1.1.py for univariate analysis where one variable is explored using box plots.  The box plots have vertical lines extending from the boxes (whiskers). These vertical lines indicate variability outside the upper and lower quartiles.
-Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  Univariate plots display (similar to the tables above) that petal width is the key identifier.
+Univariate plots help understand each variable independently. There is a wide array of plotting resources available online from historgrams, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by  outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) matplotlib.org[8].  I used Seaborn as has the added advantage of colour and sizing options.    
+
+#### Dataset Analysis
+Machinelearningmastery.com [2], tutorialspoint.com [7], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools for Iris-1.1.py.  
+
+Pandas, seaborn, matplotlib and csv libraries are imported.  Pandas analyses the data and performs statistical analysis.  Pandas plots graphs with the matplotlib library. Seaborn libraries are used to compare the distributions of each species of Iris using tutorialspoint.com[7] and stackoverflow.com[5] as resources.
+
+Run Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  
+
+Program outputs:
+1.  Box plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length):
+    - sns.boxplot(x="class", y="sepal length", data=dataset).set_title('Compare Sepal Length Distribution')
+2. Violin plot for each variable (petal length, petal width, sepal length and petal width sepal length).  E.g sepal length below:
+    - sns.violinplot(x="class", y="sepal length", data=dataset, size=6).set_title('Compare Sepal Length Distribution')
+# Show the plot
+3.  Show the plot.  The box plot is displayed using the following code:
+    plt.show()
+
+### Observe data:
+The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  A violin plot shows the density of the data.  Using violin plots Setosa stands out due to its density across all 4 variables.  This makes its easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
+
 
 ![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511040-7e601e80-6523-11e9-8b19-5e16aff1d04a.PNG)
 ![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511041-7ef8b500-6523-11e9-9342-3fc2a5792f96.PNG)
 ![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511042-7ef8b500-6523-11e9-94f8-1e9a635c3191.PNG)
 ![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56511043-7ef8b500-6523-11e9-92aa-f1092187f5e8.PNG)
+
+
 ### Multivariate Plots
 In the command line interface run Iris-2.py.  Iris-2.py uses graphics to aid analysis and identification of trends within the dataset using the seaborn visualisation library.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.    
 
@@ -124,13 +147,13 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 -[3] [https://docs.python.org/3/tutorial/inputoutput.html]
 -[4] https://www.kaggle.com/uciml/iris
 - http://archive.ics.uci.edu/ml/index.php
-- https://www.python.org/,
+-[6] https://www.python.org/,
 -[5] https://stackoverflow.com/,
-- https://matplotlib.org/
+-[8] https://matplotlib.org/
 - http://www.numpy.org/
 - https://towardsdatascience.com
 - https://pandas.pydata.org/
 - https://seaborn.pydata.org/
 - http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf
 - https://machinelearningmastery.com
-- https://www.tutorialspoint.com/
+-[7] https://www.tutorialspoint.com/

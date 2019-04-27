@@ -3,12 +3,11 @@
 
 # Modified from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
 
-# Load Pandas, pandas plotting, seaborn, matplotlib and csv libraries
+# Load Pandas, seaborn, matplotlib and csv libraries
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import csv
-
 
 # Load the dataset
 # Modified using python tutorial 7.2.  [https://docs.python.org/3/tutorial/inputoutput.html]
@@ -31,5 +30,18 @@ sns.boxplot(x="class", y="petal length", data=dataset).set_title('Compare Petal 
 # Show the plot
 plt.show()
 sns.boxplot(x="class", y="petal width", data=dataset).set_title('Compare Petal Width Distribution')
+# Show the plot
+plt.show()
+
+sns.violinplot(x="class", y="sepal length", data=dataset, size=6).set_title('Compare Sepal Length Distribution')
+# Show the plot
+plt.show()
+sns.violinplot(x="class", y="sepal width", data=dataset, size=6).set_title('Compare Sepal Width Distribution')
+# Show the plot
+plt.show()
+sns.violinplot(x="class", y="petal length", data=dataset, size=6).set_title('Compare Petal Length Distribution')
+# Show the plot
+plt.show()
+sns.violinplot(x="class", y="petal width", data=dataset, size=6).set_title('Compare Petal Width Distribution')
 # Show the plot
 plt.show()
