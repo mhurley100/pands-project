@@ -47,7 +47,7 @@ Observations of the dataset:
 - It is small - only 150 rows and 4 features.
 - It appears straightforward with no data missing.
 
-There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py.  Stackoverflow.com[5] is as always an invaluable resource for program refinement. The Iris data set can be downloaded from multiple libraries but I chose to save as a csv file on the repository. 
+There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries but I chose to save as a csv file on the repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using https://bitbucket.org/astanin/python-tabulate [14] & https://pypi.org/project/tabulate [13] 
 
  Anaconda's Pandas tool is very powerful as it manipulates, analyses the data and performs statistical analysis with minimal coding.  Python programs were used to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() performs statistical analysis.
 
@@ -201,3 +201,4 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 - [11] https://scipy-lectures.org/packages/scikit-learn/index.html
 - [12] http://www.learn4master.com/machine-learning/visualize-iris-dataset-using-python
 - [13] https://pypi.org/project/tabulate/
+- [14] https://bitbucket.org/astanin/python-tabulate

@@ -31,17 +31,13 @@ setosa = dataset[dataset['class']=='Iris-setosa']
 versicolor = dataset[dataset['class']=='Iris-versicolor']
 # Name each dataset - Virginica is the class Iris Virginica
 virginica = dataset[dataset['class']=='Iris-virginica']
-# Include headers for each dataset and separate by adding new line. Adapted from 
-# [https://stackoverflow.com/a/45377991]. Call it newline
-newline = ('\n')
-# Print the class first ("Iris Setosa"), then use the pandas dataframe describe() to analyse the series
-print('Iris Setosa',newline, setosa.describe())
-# Print the class first ("Iris Versicolor"), then use the pandas dataframe describe() to analyse the series
-print('Iris Versicolor',newline, versicolor.describe())
-# Print the class first ("Iris Virginica"), then use the pandas dataframe describe() to analyse the series
-print('Iris Virginica',newline, virginica.describe())
 
-# For 
-print(tabulate(setosa.describe(), 'Set',tablefmt="github"))
-print(tabulate(versicolor.describe(), 'Ver',tablefmt="github"))
-print(tabulate(virginica.describe(), 'Vir',tablefmt="github"))
+# Format for github.  Adapted from [https://bitbucket.org/astanin/python-tabulate] 
+# Name the headers for the printed output to paste into github
+headers={"sepal length", "sepal width","petal length","petal width"}
+# Print the class first ("Iris Setosa"), then use the pandas dataframe describe() to analyse the series
+print(tabulate(setosa.describe(), headers,tablefmt="github"))
+# Print the class first ("Iris Versicolor"), then use the pandas dataframe describe() to analyse the series
+print(tabulate(versicolor.describe(), headers,tablefmt="github"))
+# Print the class first ("Iris Virginica"), then use the pandas dataframe describe() to analyse the series
+print(tabulate(virginica.describe(), headers,tablefmt="github"))
