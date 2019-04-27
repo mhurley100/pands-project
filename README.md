@@ -1,7 +1,7 @@
 # Programming and Scripting Project 2019
-![Iris flowers](https://user-images.githubusercontent.com/47399526/56853734-a5539180-6923-11e9-8fab-da93703ca17c.PNG)
-# Iris Dataset Analysis
 
+# Iris Dataset Analysis
+![Iris flowers](https://user-images.githubusercontent.com/47399526/56853734-a5539180-6923-11e9-8fab-da93703ca17c.PNG)
 This project investigates and analyses the Iris data set using python.
 
 Project plan is as follows:
@@ -102,13 +102,10 @@ The standard deviation for all three species of Iris is low therefore the result
 
 
 ### Univariate Plots
-Univariate plots help understand each variable independently by analysing interactions between variables.  There is a wide array of plotting resources available online from historgrams, barcharts, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
+Univariate plots help understand each variable independently by analysing interactions between variables.  There is a wide array of plotting resources available online from historgrams, bar charts, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise data within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
 
-Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools for Iris-1.1.py.  
+Pandas, seaborn, matplotlib and csv libraries are required to run the programs for Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools.  Below are the programs used to analyse the dataset:
 
-Pandas, seaborn, matplotlib and csv libraries are imported.  Run Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  
-
-Program outputs:
 1.  Box plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length) with the relevant header included:
     - sns.boxplot(x="class", y="sepal length", data=dataset).set_title('Compare Sepal Length Distribution')
 2. Violin plot for each variable (petal length, petal width, sepal length and petal width sepal length).  E.g sepal length below with the relevant header included:
@@ -117,29 +114,27 @@ Program outputs:
     - plt.show()
 
 ### Data Analysis:
-The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  
+The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.
+
 ![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853821-c4065800-6924-11e9-825b-b115ecdb9237.PNG)
 ![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853822-c4065800-6924-11e9-9fc5-258eb8ed6d89.PNG)
 ![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853824-c4065800-6924-11e9-9597-7c876934d9fe.PNG)
 ![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853825-c4065800-6924-11e9-83db-75601c07d4b2.PNG)
 
-Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.  A violin plot shows the density of the data.  Using violin plots Setosa stands out due to its density across all 4 variables.  This makes its easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
+Violin plots display density of the data.  Using violin plots, Setosa stands out due to its density across all 4 variables.  This makes it relatively easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
 
 ![Violin_PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853760-0e3b0980-6924-11e9-9b16-0336e40df358.PNG)
 ![Violin_PW_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853761-0e3b0980-6924-11e9-93a0-d75f1539c8a6.PNG)
 ![Violin_SL_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853763-0ed3a000-6924-11e9-8305-c77f5232b1cf.PNG)
 ![Violin_SW_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853764-0ed3a000-6924-11e9-8e18-69337f47788f.PNG)
 
-
-
 ### Multivariate Plots
-Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], http://www.learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  Pairplots were used to analyse the relationship between each variable and also explain the relationship between variables.  
-
-Pandas, seaborn, matplotlib and csv libraries are imported with seaborn.pydata.org,kaggle.com[7] and stackoverflow.com[5] used as resources.
+Pairplots are used to analyse the relationship between each variable and also explain the relationship between variables.  
+Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  
 
 In the command line interface run Iris-2.py & Iris-3.py.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.
 
-Program outputs:
+Below are the programs used to analyse the dataset:
 1.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
     - e.g.setosa - dataset[dataset['class']=='Iris-setosa']. 
 2.  Pair plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length):
@@ -165,7 +160,7 @@ This graphs a scatterplot for each pairwise relationship.  Again Setosa is very 
 Multivariate plotting lines for all 4 dimensions enables visualisation of the relationship between the variables.  Again, the Setosa easily identifiable as being different.  Multivariate plotting is adding a new dimension and is a step above tables and univariate analysis.
 
 ### Applying Machine learning
-Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set into two- one of those sets the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
+Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
 
 KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice for assigning a class to new data point. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
 
@@ -174,8 +169,7 @@ KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice fo
 Run Iris-4.py (program adapted from machinelearningmastery.com[2]).  
 
 Pandas, pandas plotting, matplotlib, csv and several sklearn libraries are imported.  
-
-Program outputs:
+Below are the programs used to analyse the dataset:
 1.  Iris Dataset is defined as an array with the below code (converts list by calling the array() function)
 array = dataset.values
 2. X & Y arrays are sliced:
@@ -235,3 +229,5 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 - [12] http://www.learn4master.com/machine-learning/visualize-iris-dataset-using-python
 - [13] https://pypi.org/project/tabulate/
 - [14] https://bitbucket.org/astanin/python-tabulate
+- www.gmit.ie/general/quality-assurance-framework
+- http://archive.ics.uci.edu/ml/datasets/Iris
