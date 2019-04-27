@@ -13,9 +13,10 @@ Project plan is as follows:
 ## Table of Contents:
 1.   Introduction
 2.   Dataset Analysis (including statistics, univariate & mulitvariate plots)
-3.   Insights and Comparative Analysis
-4.   Conclusion
-5.   References
+3.   Machine Learning
+4.   Insights and Comparative Analysis
+5.   Conclusion
+6.   References
 
 ## Introduction
 
@@ -39,7 +40,6 @@ Is it possible to classify and predict species of Iris (Setosa, Versicolor and V
 
 #### Statistics
 Iris-1.py is a python program that calculates basic statistics on the dataset.  The Iris raw data is imported into python as a csv file.  
-
 Observations of the dataset:
 - It is small - only 150 rows and 4 features.
 - It appears straightforward with no data missing.
@@ -91,9 +91,8 @@ There are so many online sources, however many sites have the same repeated anal
 4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris using tabulate to enable to paste into github as follows:
     -print(tabulate(setosa.describe(), headers,tablefmt="github"))
 
-### Data Analysis:
+##### Statistics Summary:
 The standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and as a result potentially predictable.
-#### Observations:
 - Petal width stands out as an identifier for Iris class.  
 - Petal width observations:
   - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
@@ -101,7 +100,7 @@ The standard deviation for all three species of Iris is low therefore the result
   - Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
 
 
-### Univariate Plots
+#### Univariate Plots
 Univariate plots help understand each variable independently by analysing interactions between variables.  There is a wide array of plotting resources available online from historgrams, bar charts, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise data within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
 
 Pandas, seaborn, matplotlib and csv libraries are required to run the programs for Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools.  Below are the programs used to analyse the dataset:
@@ -113,22 +112,23 @@ Pandas, seaborn, matplotlib and csv libraries are required to run the programs f
 3.  Show the plot.  The box plot is displayed using the following code:
     - plt.show()
 
-### Data Analysis:
-The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.
-
+The box plots have vertical lines extending from the boxes. These vertical lines indicate variability outside the upper and lower quartiles.  
 ![PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853821-c4065800-6924-11e9-825b-b115ecdb9237.PNG)
 ![PW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853822-c4065800-6924-11e9-9fc5-258eb8ed6d89.PNG)
 ![SL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853824-c4065800-6924-11e9-9597-7c876934d9fe.PNG)
 ![SW_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853825-c4065800-6924-11e9-83db-75601c07d4b2.PNG)
 
-Violin plots display density of the data.  Using violin plots, Setosa stands out due to its density across all 4 variables.  This makes it relatively easy to identify.  Univariate plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
-
+Violin plots display density of the data.  Using violin plots, Setosa stands out due to its density across all 4 variables.  This makes it relatively easy to identify.  
 ![Violin_PL_Distribution_bp](https://user-images.githubusercontent.com/47399526/56853760-0e3b0980-6924-11e9-9b16-0336e40df358.PNG)
 ![Violin_PW_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853761-0e3b0980-6924-11e9-93a0-d75f1539c8a6.PNG)
 ![Violin_SL_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853763-0ed3a000-6924-11e9-8305-c77f5232b1cf.PNG)
 ![Violin_SW_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853764-0ed3a000-6924-11e9-8e18-69337f47788f.PNG)
 
-### Multivariate Plots
+##### Univariate Summary:
+Using box plots, Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.
+Both violin and box plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
+
+#### Multivariate Plots
 Pairplots are used to analyse the relationship between each variable and also explain the relationship between variables.  
 Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  
 
@@ -146,20 +146,20 @@ g = g.map(plt.scatter, linewidths=1, edgecolor="w", s=40)
 4.  Show the plot.  The box plot is displayed using the following code:
     plt.show()
 
-### Data Analysis:
-Iris-Setosa stands out as being easy to classify given the 4 dimensions.
-- 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clearly demonstrated in the scatter plot matrices.
- 
-- Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
-  ![Seaborn1_Distribution](https://user-images.githubusercontent.com/47399526/56510680-6b008380-6522-11e9-8319-2c838b5ff75c.PNG)
+![Seaborn1_Distribution](https://user-images.githubusercontent.com/47399526/56510680-6b008380-6522-11e9-8319-2c838b5ff75c.PNG)
 In the command line interface run Iris-3.py.
 
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
 ![Seaborn2_Distribution](https://user-images.githubusercontent.com/47399526/56510843-ee21d980-6522-11e9-92e1-92158d57c163.PNG)
 
-Multivariate plotting lines for all 4 dimensions enables visualisation of the relationship between the variables.  Again, the Setosa easily identifiable as being different.  Multivariate plotting is adding a new dimension and is a step above tables and univariate analysis.
+##### Multivariate Summary
+Iris-Setosa stands out as being easy to classify given the 4 dimensions.
+- 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clearly demonstrated in the scatter plot matrices.
+ 
+- Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
+  Multivariate plotting lines for all 4 dimensions enables visualisation of the relationship between the variables.  Again, the Setosa easily identifiable as being different.  Multivariate plotting is adding a new dimension and is a step above tables and univariate analysis.
 
-### Applying Machine learning
+### Machine learning
 Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
 
 KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice for assigning a class to new data point. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
@@ -194,20 +194,21 @@ knn.fit(X, y)
 7. Predict Iris Species (4cm x 4cm sepal and 4cm x 2cm petal)
 print(iris.target_names[knn.predict([[3, 5, 3, 3]])])
 
-### Data Analysis:
+##### Machine Learning Summary
 KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.
 The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
 KNN can predict an Iris class if data on the 4 variables with the data provided.
 
-## Insights and Comparative Analysis
+### Insights and Comparative Analysis
 Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy. However, the Iris dataset can be analysed almost as effectively with only one variable - petal width. Using multiple variables makes simple analysis more difficult to explain and critique.  Also, it has been established that a variety of classification methods yield good results on Iris however Iris is predictable and relatively easy to classify.  
 
-Data analysis on a dataset is only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result instead of applying complex machine learning models to try to predict classification?  It may be that there are issues with the underlying data.  Two of the three samples were picked on the same day - this is a qualitative variable which is not factored into any of the analytical tools.
-This project examines statistical, univariate, multivariate and machine learning capabilities.
-However the results are only as good as the quality of the data used.
+Data analysis on a dataset is only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result instead of applying complex machine learning models to try to predict classification?  It may be that there are issues with the underlying data.  Two of the three samples were picked on the same day - this is a qualitative variable which is not factored into any of the analytical tools.  Also what growth stage were these flowers at?
+
 
 ### Conclusion
 
+This project examines statistical, univariate, multivariate and machine learning capabilities.
+However the results are only as good as the quality of the data used.
 There are relatively few features in the Iris dataset and two of the classes are much more correlated than the third.  Setosa is very easily separated by the petal width and petal length. Therefore, data modelling lends itself in this case to good results.  We can predict Setosa with almost 100% accuracy given known data points.
 
 In Machine Learning, there is no specific model or an algorithm which can give 100% result to every single dataset. We need to understand the data before we apply any algorithm and build our model depending on the desired result. 
