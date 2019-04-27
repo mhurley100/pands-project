@@ -47,6 +47,7 @@ print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
 print(classification_report(Y_validation, predictions))
 
+
 # Predict a species of Iris [ Adapted from https://pypi.org/project/tabulate/]:
 # Import the datasets
 from sklearn import neighbors, datasets
