@@ -187,6 +187,15 @@ knn.fit(X, y)
 7. Predict Iris Species (4cm x 4cm sepal and 4cm x 2cm petal)
 print(iris.target_names[knn.predict([[3, 5, 3, 3]])])
 
+|               |precision   | recall   |f1-score |support
+|---------------|------------|----------|---------|-------|
+|Iris-setosa    |1.00        | 1.00     |1.00     | 7     |
+|Iris-versicolor|   0.85     | 0.92     | 0.88    | 12    |
+|Iris-virginica | 0.90       |0.82      |0.86     | 11    |
+|               |            |          |         |       |
+|micro avg      | 0.90       | 0.90     |0.90     | 30    |
+|macro avg      | 0.92       |0.91      |0.91     |30     |
+|weighted avg   |  0.90      |0.90      |0.90     |30     |
 
 ##### Machine Learning Summary
 Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.  The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
