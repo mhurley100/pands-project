@@ -36,7 +36,6 @@ Four features are were measured from each sample:
 Ronald A. Fischer (British statistician and biologist) used Anderson’s data and formulated linear discriminant analysis using the Iris dataset in his 1936 paper "The use of multiple measurements in taxonomic problems". The goal of discriminant analysis is given four measurements a flower can be classified correctly. Data analytics has evolved significantly since Fischer's paper with the Iris dataset used for training and testing of algorithms and Machine Learning.  It appears possible that with multivariate samples outcomes can be predicted with very high levels of accuracy.
 
 ## Dataset Analysis
-Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Can classes can be predicted given multiple parameters?    
 
 Observations of the dataset:
 - It is small - only 150 rows and 4 features.
@@ -157,16 +156,17 @@ Using multivariate analysis, Iris-Setosa stands out as being easy to classify gi
 The Iris dataset is relatively small and predictable therefore statistical analysis would be sufficent to draw conclusions regarding the data set.  However multivariate plotting adds a new dimension and is a step above tables and univariate analysis.  It enables visualisation of the relationship between the variables which would aid analysis of inter-relationship of variables in more complex datasets.
 
 ### Machine learning
-Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
+Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Can classes can be predicted given multiple parameters?  With that purpose in mind, machine learning techniques were researched using scikit-learn.org, machinelearningmastery.com, kaggle.com and quantinsti.com
 
-KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice for assigning a class to new data point. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
+Machine Learning provides machines with the ability to learn autonomously based on observations and analysing patterns without explicitly programming.  With a program, a definite set of instructions are writted for the machine to follow. With machine learning, patterns are identified and analysed in the dataset and decisions are taken autonomously based on observations and learnings from the dataset.
 
- Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.
+Machine Learning algorithms are broadly classified into Supervised Algorithms and Unsupervised Algorithms.  KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice (Supervised Algorithm) for assigning a class to new data points. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
 
-Run Iris-4.py (program adapted from machinelearningmastery.com[2]).  
+A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
+
+Python program Iris-4.py (program adapted from machinelearningmastery.com[2]) is used to analyse the dataset:  
 
 Pandas, pandas plotting, matplotlib, csv and several sklearn libraries are imported.  
-Below are the programs used to analyse the dataset:
 1.  Iris Dataset is defined as an array with the below code (converts list by calling the array() function)
 array = dataset.values
 2. X & Y arrays are sliced:
@@ -179,12 +179,9 @@ seed = 7
 4.  Training data is in X_train and Y_train for model training and X_validation and Y_validation for later use with the below code:
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 5.  Make predictions on validation dataset.  Adapted from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/[2]]
-knn = KNeighborsClassifier()
-knn.fit(X_train, Y_train)
-predictions = knn.predict(X_validation)
-print(accuracy_score(Y_validation, predictions))
-print(confusion_matrix(Y_validation, predictions))
-print(classification_report(Y_validation, predictions))
+Print the accuracy score:  print(accuracy_score(Y_validation, predictions))
+Print confusion matrix: print(confusion_matrix(Y_validation, predictions))
+Print classification report: print(classification_report(Y_validation, predictions))
 6. Predict Iris class or species:
 knn = neighbors.KNeighborsClassifier(n_neighbors=1)
 knn.fit(X, y)
@@ -192,8 +189,7 @@ knn.fit(X, y)
 print(iris.target_names[knn.predict([[3, 5, 3, 3]])])
 
 ##### Machine Learning Summary
-KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.
-The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
+Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.  The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
 KNN can predict an Iris class if data on the 4 variables with the data provided.
 
 ### Insights and Comparative Analysis
@@ -229,3 +225,4 @@ More basic modelling is sufficient as the Iris dataset is predictable.  However,
 - [14] https://bitbucket.org/astanin/python-tabulate
 - www.gmit.ie/general/quality-assurance-framework
 - http://archive.ics.uci.edu/ml/datasets/Iris
+- https://www.quantinsti.com/blog/machine-learning-basics
