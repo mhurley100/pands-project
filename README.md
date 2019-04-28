@@ -5,9 +5,9 @@
 This project investigates and analyses the Iris data set using python.
 
 Project plan is as follows:
-1. Research the Iris Dataset listing references to evidence that research.
-2. Use python to analyse the Iris data set.
-3. Summarise finding using supporting tables and graphics as relevant.
+1. Research the Iris Dataset listing references to evidence that research
+2. Use python to analyse the Iris data set
+3. Summarise finding using supporting tables and graphics as relevant
 4. Critical Review of Dataset
 
 ## Table of Contents:
@@ -15,8 +15,7 @@ Project plan is as follows:
 2.   Dataset Analysis (including statistics, univariate & multivariate plots)
 3.   Machine Learning
 4.   Insights and Comparative Analysis
-5.   Conclusion
-6.   References
+5.   Conclusion and Recommendations
 
 ## Introduction
 
@@ -78,7 +77,7 @@ Iris-1.py is a python program that calculates basic statistics on the dataset.  
 | max      |        7.9     |      3.8      |      6.9      |        2.5     |
 
 
-Anaconda's Pandas tool is very powerful as it manipulates, analyses and performs statistical analysis with minimal coding.  Iris-1.py contains pandas python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by dimensions (petal width, petal length, sepal width and sepal length).  Pandas dataframe describe() was used to perform this analysis.  Below are the programs used to analyse the dataset:
+Anaconda's Pandas tool is very powerful as it manipulates, analyses and performs statistical analysis with minimal coding.  Iris-1.py contains pandas python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by dimensions (petal width, petal length, sepal width and sepal length).  Pandas dataframe describe()) was used to perform this analysis.  Below are the programs used to analyse the dataset:
 
 1.  The first 20 lines are printed by running the following line of code on the dataset:
       - (print(dataset.head(20)))
@@ -168,7 +167,7 @@ Python program Iris-4.py (program adapted from machinelearningmastery.com[2]) is
 Pandas, pandas plotting, matplotlib, csv and several sklearn libraries are imported.  
 1.  Iris Dataset is defined as an array with the below code (converts list by calling the array() function)
 array = dataset.values
-2.  X & Y arrays are sliced:
+2.  X & Y arrays are sliced (5 columns imported):
 X = array[:,0:4], Y = array[:,4]
 3.  Use 20% of dataset for testing:  validation_size = 0.20
 3. Each seed value will correspond to a sequence of generated values for a given random number generator:  seed = 7
@@ -177,7 +176,7 @@ X = array[:,0:4], Y = array[:,4]
 6.  Print confusion matrix: print(confusion_matrix(Y_validation, predictions))
 7.  Print classification report: print(classification_report(Y_validation, predictions))
 
-An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  The confusion matrix provides an indication of the three errors made. 
+An object is classified by a majority vote of its neighbours, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  The confusion matrix provides an indication of the three errors made. 
 
 Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (given the validation dataset was small).
 
@@ -199,6 +198,29 @@ Finally, the classification report provides a breakdown of each class by precisi
 With dimensions of 4cm x 4cm sepal and 4cm x 2cm petal the following output is generated from Iris-4.py:
 
 'Versicolor'
+
+##### Machine Learning - new variable
+- One measure that is not included as a variable is leaf length [15] www.fs.fed.us/wildflowers: 
+    - Iris Setosa leaves are up to 12 inches high (30 cm)
+    - Iris Virginica leaves are two to three feet long (avg 76cm)
+    - Iris Versicolor leaves are up to four feet long (avg 102 cm)
+
+If leaf length is included as a variable, the other 4 variables would not be required for identification purposes (perhaps only to analyse the inter relationship with each other).
+
+Python program Iris-5.py (program adapted from Iris-4.py and from machinelearningmastery.com[2]) is used to analyse the dataset:  
+
+|               |precision   | recall   |f1-score |support
+|---------------|------------|----------|---------|-------|
+|Iris-setosa    |1.00        | 1.00     |1.00     |7      |
+|Iris-versicolor|1.00        | 1.00     |1.00     |12     |
+|Iris-virginica |1.00        | 1.00     |1.00     |11     |
+|               |            |          |         |       |
+|micro avg      |1.00        | 1.00     |1.00     |30     |
+|macro avg      |1.00        | 1.00     |1.00     |30     |
+|weighted avg   |1.00        | 1.00     |1.00     |30     |
+
+The dataset is now 100% predictable. 
+
 
 ##### Machine Learning Summary
 Machine learning techniques aid validation of the dataset and estimate accuracy.  This is a step change in data analytics, machine learning can predict outcomes.  KNN predicted Iris class given 4 variables of data.  However, the Iris dataset is well suited to KNN as the data is clustered closely together and therefore already predictable.  However, if the sample was much more widely spread or ambiguous, it is likely that predicted outcome would not be as accurate.
