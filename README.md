@@ -38,13 +38,13 @@ Ronald A. Fischer (British statistician and biologist) used Anderson’s data an
 ## Dataset Analysis
 Is it possible to classify and predict species of Iris (Setosa, Versicolor and Virginica) with 4 given dimensions (sepal width, sepal length, petal width and petal length)? Can classes can be predicted given multiple parameters?    
 
-#### Statistics
-Iris-1.py is a python program that calculates basic statistics on the dataset.  The Iris raw data is imported into python as a csv file.  
 Observations of the dataset:
 - It is small - only 150 rows and 4 features.
 - It appears straightforward with no data missing.
 
-There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] are used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries.  I chose to save as a csv file within this repository. I also had to import tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using (itbucket.org [14] & pypi.org/project/tabulate [13])  The result of this research is as follows:
+#### Statistics
+Iris-1.py is a python program that calculates basic statistics on the dataset.  The Iris raw data is imported into python as a csv file.  
+There are so many online sources, however many sites have the same repeated analysis.  Machinelearningmastery.com [2] and kaggle.com [4] were used as learning resources and training tools for Iris-1.py. The Iris data set can be downloaded from multiple libraries.  I chose to save as a csv file within this repository. I also imported tabulate by running "tabulate" on the command line interface.  I researched how to formulate a table in python and import into github using (itbucket.org [14] & pypi.org/project/tabulate [13])  The result of this research is as follows:
 
 |Setosa    |   sepal length |   petal width |   sepal width |   petal length |
 |----------|----------------|---------------|---------------|----------------|
@@ -80,7 +80,7 @@ There are so many online sources, however many sites have the same repeated anal
 | max      |        7.9     |      3.8      |      6.9      |        2.5     |
 
 
- Anaconda's Pandas tool is the tool of choice for statistical analysis.  It is very powerful as it manipulates, analyses and performs statistical analysis with minimal coding.  Iris-1.py contains pandas python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by petal width, petal length, sepal width and sepal length.  Pandas dataframe describe() was used to perform this analysis.  Below are the programs used to analyse the dataset:
+ Anaconda's Pandas is the tool of choice for statistical analysis.  It is very powerful as it manipulates, analyses and performs statistical analysis with minimal coding.  Iris-1.py contains pandas python programs to group the Iris flowers into their respective classes (Setosa, Versicolor and Virginica) and separate by dimensions (petal width, petal length, sepal width and sepal length).  Pandas dataframe describe() was used to perform this analysis.  Below are the programs used to analyse the dataset:
 
 1.  The first 20 lines are printed by running the following line of code on the dataset:
     -(print(dataset.head(20)))
@@ -88,26 +88,17 @@ There are so many online sources, however many sites have the same repeated anal
     -print(dataset.groupby('class').size())
 3.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
     - e.g.setosa is separated into its class as follows: dataset[dataset['class']=='Iris-setosa']. 
-4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris using tabulate to enable to paste into github as follows:
+4.  Pandas dataframe describe() calculates statistics on the dataset.  Each class of Iris is grouped and statistics are completed (count, mean, std, min, 25%, 50%, 75% and max) for each class of Iris using tabulate (this enables the data to be pasted into github layout) as follows:
     -print(tabulate(setosa.describe(), headers,tablefmt="github"))
 
-##### Statistics Summary:
-The standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and as a result potentially predictable.
-- Petal width stands out as an identifier for Iris class.  
-- Petal width observations:
-  - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
-  - Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
-  - Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
-
-
 #### Univariate Plots
-Univariate plots help understand each variable independently by analysing interactions between variables.  There is a wide array of plotting resources available online from historgrams, bar charts, scatter graphs, box, violin, linear etc all producing similar results.  I chose box plots and violin plots.  Box plots summarise data within and between groups using 25th, 50th & 75th percentiles meaning that they are not influenced by outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
+Univariate plots help understand each variable independently by analysing interactions between variables.  There is a wide array of plotting resources available online from historgrams, bar charts, scatter graphs, box, violin, linear etc. all producing similar results.  I chose box plots and violin plots.  Box plots summarise data within and between groups using the 25th, 50th & 75th percentiles which means that they are not influenced by outliers.  Violin plots show the probability distribution of the sample by computing empirical distributions using kernal density estimation (KDE) (source matplotlib.org[8]).  I used Seaborn as it has the added advantage of colour and sizing options.    
 
-Pandas, seaborn, matplotlib and csv libraries are required to run the programs for Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]are used as learning resources and training tools.  Below are the programs used to analyse the dataset:
+Pandas, seaborn, matplotlib and csv libraries are required to run the programs for Iris 1.1.py where the four variables of petal length, petal width, sepal length and petal width are explored using box and violin plots.  Machinelearningmastery.com [2], tutorialspoint.com [7], seaborn.pydata.org [9], stackoverflow.com[5] and python.org [6]were used as learning resources and training tools.  Below are the programs used to analyse the dataset:
 
-1.  Box plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length) with the relevant header included:
+1.  Box plot for each variable (petal length, petal width, sepal length and sepal width) are displayed using the following code (e.g sepal length) with the relevant heading included:
     - sns.boxplot(x="class", y="sepal length", data=dataset).set_title('Compare Sepal Length Distribution')
-2. Violin plot for each variable (petal length, petal width, sepal length and petal width sepal length).  E.g sepal length below with the relevant header included:
+2. Violin plot for each variable (petal length, petal width, sepal length and sepal width) are displayed using the following code (e.g sepal length) with the relevant heading included:
     - sns.violinplot(x="class", y="sepal length", data=dataset, size=6).set_title('Compare Sepal Length Distribution')
 3.  Show the plot.  The box plot is displayed using the following code:
     - plt.show()
@@ -124,12 +115,8 @@ Violin plots display density of the data.  Using violin plots, Setosa stands out
 ![Violin_SL_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853763-0ed3a000-6924-11e9-8305-c77f5232b1cf.PNG)
 ![Violin_SW_Distribution_bp - Copy](https://user-images.githubusercontent.com/47399526/56853764-0ed3a000-6924-11e9-8e18-69337f47788f.PNG)
 
-##### Univariate Summary:
-Using box plots, Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length.  Virginica and Versicolor appear more closely related than Setosa.
-Both violin and box plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
-
 #### Multivariate Plots
-Pairplots are used to analyse the relationship between each variable and also explain the relationship between variables.  
+Pairplots were used to analyse the relationship between each variable and also explain the relationship between variables.  
 Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  
 
 In the command line interface run Iris-2.py & Iris-3.py.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.
@@ -137,7 +124,7 @@ In the command line interface run Iris-2.py & Iris-3.py.  Seaborn pairplot is us
 Below are the programs used to analyse the dataset:
 1.  3 dataframes are created for each species ('class') of Iris and each named as their respective species using the following code:
     - e.g.setosa - dataset[dataset['class']=='Iris-setosa']. 
-2.  Pair plot for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g Sepal Length):
+2.  Pair plots for petal length, petal width, sepal length and petal width sepal length are displayed using the following code (e.g sepal length):
     - g = sns.pairplot(dataset, hue='class', markers=["o", "s", "D"])
 3.  Use seaborn pairgrid functionality on the dataset:
 g = sns.PairGrid(dataset, hue="class", palette="Set2", hue_kws={"marker": ["o", "s", "D"]})
@@ -152,12 +139,22 @@ In the command line interface run Iris-3.py.
 This graphs a scatterplot for each pairwise relationship.  Again Setosa is very clearly distinguishable.  Versicolor and Virginica less so but should still be identifiable to a given acceptable range. 
 ![Seaborn2_Distribution](https://user-images.githubusercontent.com/47399526/56510843-ee21d980-6522-11e9-92e1-92158d57c163.PNG)
 
-##### Multivariate Summary
-Iris-Setosa stands out as being easy to classify given the 4 dimensions.
-- 2 scatter plots are generated to demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  This is clearly demonstrated in the scatter plot matrices.
- 
+#### Dataset Summary:
+Using statistical analysis the standard deviation for all three species of Iris is low therefore the results indicate that the data samples are reasonably close to the mean and as a result potentially predictable.
+- Petal width stands out as an identifier for Iris class.  
+- Petal width observations:
+  - Iris-Virginica has the widest petals.  1.4 - 2.5 (1.8 to 2.5 is always Virginica)
+  - Iris-Versicolor has medium width petals. 1.0 - 1.8 is always Versicolor
+  - Iris-Setosa has the narrowest petals - 0.1 - 0.6 cm meaning Setosa can be identified using petal width as the key parameter.
+
+Using univariate analysis, Setosa stands out from Virginica and Versicolor.  Setosa is easily identifiable by petal width (in particular) and petal length as the data is closely grouped.  Virginica and Versicolor appear more closely related to each other.
+Both violin and box plots display (similar to the tables above) that petal width is the key identifier and Setosa is different from the other 2 species.  
+
+Using multivariate analysis, Iris-Setosa stands out as being easy to classify given the 4 dimensions.
+- 2 scatter plots clearly demonstrate the correlation between sepal width and length and petal width and length for each class of Iris.  From the scatter matrix you can see that Iris Setosa is almost completely identifiable based on sepal width and length and petal width and length.  
 - Iris Versicolor and Iris Virginica are more alike as there is an overlap in sepal width and length but are more identifiable by petal width and length. 
-  Multivariate plotting lines for all 4 dimensions enables visualisation of the relationship between the variables.  Again, the Setosa easily identifiable as being different.  Multivariate plotting is adding a new dimension and is a step above tables and univariate analysis.
+
+The Iris dataset is relatively small and predictable therefore statistical analysis would be sufficent to draw conclusions regarding the data set.  However multivariate plotting adds a new dimension and is a step above tables and univariate analysis.  It enables visualisation of the relationship between the variables which would aid analysis of inter-relationship of variables in more complex datasets.
 
 ### Machine learning
 Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
