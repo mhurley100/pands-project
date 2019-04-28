@@ -32,3 +32,13 @@ virginica = dataset[dataset['class']=='Iris-virginica']
 g = sns.pairplot(dataset, hue='class', markers=["o", "s", "D"])
 # Show the plot
 plt.show()
+
+# Modified from [https://seaborn.pydata.org/generated/seaborn.PairGrid.html]
+# Use seaborn pairgrid functionality on the dataset
+g = sns.PairGrid(dataset, hue="class", palette="Set2", hue_kws={"marker": ["o", "s", "D"]})
+# Generate scatter plot using seaborn
+g = g.map(plt.scatter, linewidths=1, edgecolor="w", s=40)
+# Add legend
+g = g.add_legend()
+# Show the plots
+plt.show()

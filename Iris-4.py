@@ -40,11 +40,17 @@ seed = 7
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 
 # Make predictions on validation dataset.  Adapted from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/]
+# KNeighborsClassifier() is referred to as knn
 knn = KNeighborsClassifier()
+# Training samples
 knn.fit(X_train, Y_train)
+# knn.predict(X_validation) is referred to as predictions
 predictions = knn.predict(X_validation)
+# Print accuracy score
 print(accuracy_score(Y_validation, predictions))
+# Print confusion matrix
 print(confusion_matrix(Y_validation, predictions))
+# Print classification report
 print(classification_report(Y_validation, predictions))
 
 
