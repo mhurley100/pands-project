@@ -15,7 +15,7 @@ Project plan is as follows:
 2.   Dataset Analysis (including statistics, univariate & multivariate plots)
 3.   Machine Learning
 4.   Insights and Comparative Analysis
-5.   Conclusion and Recommendations
+5.   Conclusion
 
 ## Introduction
 
@@ -197,17 +197,27 @@ Finally, the classification report provides a breakdown of each class by precisi
 
 With dimensions of 4cm x 4cm sepal and 4cm x 2cm petal the following output is generated from Iris-4.py:
 
-'Versicolor'
+#####'Versicolor'
 
-##### Machine Learning - new variable
+
+##### Machine Learning Summary
+Machine learning techniques aid validation of the dataset and estimate accuracy.  This is a step change in data analytics, machine learning can predict outcomes.  KNN predicted Iris class given 4 variables of data.  However, the Iris dataset is well suited to KNN as the data is clustered closely together and therefore already predictable.  However, if the sample was much more widely spread or ambiguous, it is likely that predicted outcome would not be as accurate.
+
+
+## Insights and Comparative Analysis
 - One measure that is not included as a variable is leaf length [15] www.fs.fed.us/wildflowers: 
     - Iris Setosa leaves are up to 12 inches high (30 cm)
     - Iris Virginica leaves are two to three feet long (avg 76cm)
     - Iris Versicolor leaves are up to four feet long (avg 102 cm)
 
-If leaf length is included as a variable, the other 4 variables would not be required for identification purposes (perhaps only to analyse the inter relationship with each other).
+If leaf length is included as a variable, the other 4 variables would not be required for identification purposes (perhaps only to analyse how they correlate with each other).  I have assumed a similar leaf length for each category which will make it 100% predictable. 
 
 Python program Iris-5.py (program adapted from Iris-4.py and from machinelearningmastery.com[2]) is used to analyse the dataset:  
+The same code is used as Iris-4.py with minor modifications:
+- Iris_lf is the csv file imported
+- X & Y arrays are sliced (6 columns imported):
+X = array[:,0:5], Y = array[:,5]
+
 
 |               |precision   | recall   |f1-score |support
 |---------------|------------|----------|---------|-------|
@@ -219,26 +229,16 @@ Python program Iris-5.py (program adapted from Iris-4.py and from machinelearnin
 |macro avg      |1.00        | 1.00     |1.00     |30     |
 |weighted avg   |1.00        | 1.00     |1.00     |30     |
 
-The dataset is now 100% predictable. 
+The dataset is as expected 100% predictable. 
 
-
-##### Machine Learning Summary
-Machine learning techniques aid validation of the dataset and estimate accuracy.  This is a step change in data analytics, machine learning can predict outcomes.  KNN predicted Iris class given 4 variables of data.  However, the Iris dataset is well suited to KNN as the data is clustered closely together and therefore already predictable.  However, if the sample was much more widely spread or ambiguous, it is likely that predicted outcome would not be as accurate.
-
-##  Conclusion and Recommendations
-
-Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy.  However, the Iris dataset is not complex and can be analysed almost as effectively using only one variable - petal width.  Univariate, multivariate and machine learning classification methods yield similar results.  Using complex modelling makes simple analysis more difficult to explain and critique.  Iris is predictable and relatively easy to classify and complex machine learning models certainly have their place but one would question if the dataset requires application of machine learning.  Understanding the dataset is key and application of specific models or algorithms should always have the requirements of that dataset in mind.
-
-### Recommendations
-- One measure that is not included in the variable is leaf length [15] www.fs.fed.us/wildflowers: 
-    - Iris Setosa leaves are up to 12 inches high
-    - Iris Virginica leaves are two to three feet long
-    - Iris Versicolor leaves are up to four feet long
-If leave length was included as a variable, the other 4 variables would not be required for identification purposes (perhaps only to analyse the inter relationship with other variables).
-
+##### Other factors:
 - Additional Sampling.  Data input accuracy is key in analysing a dataset as analysis will only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result?
 
 - Review of external factors.  Two of the three samples were picked on the same day - are there any external factors that could have impacted the measurements e.g. time of day the flowers were picked, stage of growth, weather etc.?  These are qualitative variables which are not factored into any of the analytical tools.
+
+##  Conclusion
+
+Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy.  However, the Iris dataset is not complex and can be analysed almost as effectively using only one variable - petal width.  Univariate, multivariate and machine learning classification methods all yield similar results.  Using complex modelling makes simple analysis more difficult to explain and critique.  Iris is predictable and relatively easy to classify and complex machine learning models certainly have their place but one would question if the dataset requires application of machine learning.  Understanding the dataset is key and application of specific models or algorithms should always have the specifications of that dataset in mind.
 
 
 ##  References
