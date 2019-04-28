@@ -162,7 +162,7 @@ Machine Learning provides machines with the ability to learn autonomously based 
 
 Machine Learning algorithms are broadly classified into Supervised Algorithms and Unsupervised Algorithms.  KNN (K-Nearest Neighbor) appears to be the classification algorithm of choice (Supervised Algorithm) for assigning a class to new data points. The main advantage of KNN is that it does not make any assumptions on the data distribution. It keeps all the training data to make future predictions by computing the similarity between an input sample and each training instance.
 
-A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] https://scikit-learn.org/stable/tutorial/basic/tutorial.html.
+A common practice in machine learning is to evaluate an algorithm by splitting a data set in two - one being the training set (properties are learned) and the other the testing set (to test the learned properties) [10] scikit-learn.org.
 
 Python program Iris-4.py (program adapted from machinelearningmastery.com[2]) is used to analyse the dataset:  
 
@@ -170,23 +170,23 @@ Pandas, pandas plotting, matplotlib, csv and several sklearn libraries are impor
 1.  Iris Dataset is defined as an array with the below code (converts list by calling the array() function)
 array = dataset.values
 2. X & Y arrays are sliced:
-X = array[:,0:4]
-Y = array[:,4]
-3.  Use 20% of dataset for testing with the below code:
-validation_size = 0.20
-3. Each seed value will correspond to a sequence of generated values for a given random number generator:
-seed = 7
+X = array[:,0:4], Y = array[:,4]
+3.  Use 20% of dataset for testing:  validation_size = 0.20
+3. Each seed value will correspond to a sequence of generated values for a given random number generator:  seed = 7
 4.  Training data is in X_train and Y_train for model training and X_validation and Y_validation for later use with the below code:
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
-5.  Make predictions on validation dataset.  Adapted from [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/[2]]
 Print the accuracy score:  print(accuracy_score(Y_validation, predictions))
 Print confusion matrix: print(confusion_matrix(Y_validation, predictions))
 Print classification report: print(classification_report(Y_validation, predictions))
+
+The accuracy is 0.9 or 90%. The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (given the validation dataset was small).
+
 6. Predict Iris class or species:
 knn = neighbors.KNeighborsClassifier(n_neighbors=1)
 knn.fit(X, y)
 7. Predict Iris Species (4cm x 4cm sepal and 4cm x 2cm petal)
 print(iris.target_names[knn.predict([[3, 5, 3, 3]])])
+
 
 ##### Machine Learning Summary
 Machine learning techniques aid validation of the dataset and estimate accuracy. It involves learning properties of a data set and then testing those properties against another data set. Each instance describes the properties of an observed flower measurements and the output variable is specific iris species.  KNN can be used for predicting class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  This is a step change in data analytics, machine learning can predict outcomes.  The confusion matrix provides an indication of the three errors made. Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (granted the validation dataset was small).
