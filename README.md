@@ -115,7 +115,7 @@ Violin plots display density of the data.  Using violin plots, Setosa stands out
 
 #### Multivariate Plots
 Pairplots were used to analyse the relationship between each variable and also explain the relationship between variables.  
-Machinelearningmastery.com [2], www.kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  
+Machinelearningmastery.com [2], kaggle.com [4], stackoverflow.com[5] seaborn.pydata.org [9], learn4master.com [12] and python.org [6] were used as learning resources and training tools for Iris-2.py. and Iris-3.py.  
 
 In the command line interface run Iris-2.py & Iris-3.py.  Seaborn pairplot is used to graphically compare the distribution of each dimension and their relationship to other dimensions.
 
@@ -177,9 +177,7 @@ X = array[:,0:4], Y = array[:,4]
 6.  Print confusion matrix: print(confusion_matrix(Y_validation, predictions))
 7.  Print classification report: print(classification_report(Y_validation, predictions))
 
-An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.
-
-The confusion matrix provides an indication of the three errors made. 
+An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its nearest K neighbours.  This value is the average (or median) of the values of its k nearest neighbours.  Accuracy is 90% which gives high confidence.  The confusion matrix provides an indication of the three errors made. 
 
 Finally, the classification report provides a breakdown of each class by precision, recall, f1-score and support showing excellent results (given the validation dataset was small).
 
@@ -207,17 +205,18 @@ Machine learning techniques aid validation of the dataset and estimate accuracy.
 
 ##  Conclusion and Recommendations
 
-Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy.  However, the Iris dataset is not complex and can be analysed almost as effectively using only one variable - petal width.  Univariate, multivariate and machine learning classification methods yield similar results.  Using complex modelling makes simple analysis more difficult to explain and critique.  Iris is predictable and relatively easy to classify and complex machine learning models certainly have their place but one would question if the dataset should be used in machine learning.  Understanding the dataset is key and application of specific models or algorithms should always have the requirements of that dataset in mind.
+Data analytics has evolved with the advent of technology and analytical tools that can predict outcomes with high levels of accuracy.  However, the Iris dataset is not complex and can be analysed almost as effectively using only one variable - petal width.  Univariate, multivariate and machine learning classification methods yield similar results.  Using complex modelling makes simple analysis more difficult to explain and critique.  Iris is predictable and relatively easy to classify and complex machine learning models certainly have their place but one would question if the dataset requires application of machine learning.  Understanding the dataset is key and application of specific models or algorithms should always have the requirements of that dataset in mind.
 
 ### Recommendations
 - One measure that is not included in the variable is leaf length [15] www.fs.fed.us/wildflowers: 
     - Iris Setosa leaves are up to 12 inches high
     - Iris Virginica leaves are two to three feet long
     - Iris Versicolor leaves are up to four feet long
+If leave length was included as a variable, the other 4 variables would not be required for identification purposes (perhaps only to analyse the inter relationship with other variables).
 
-- Additional Sampling.  Data input accuracy is key in analysing a dataset as analysis will only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result as there may be issues with the underlying data.  
+- Additional Sampling.  Data input accuracy is key in analysing a dataset as analysis will only as good as the raw data input.  Versicolor and Virginica are so alike - should additional samples have been taken to further improve and enhance the result?
 
-- Review of external factors.  Two of the three samples were picked on the same day - are there any external factors that could have impacted the measurements e.g. time of day the flowers were picked, stage of growth, weather etc.?  These are qualitative variable which is not factored into any of the analytical tools.
+- Review of external factors.  Two of the three samples were picked on the same day - are there any external factors that could have impacted the measurements e.g. time of day the flowers were picked, stage of growth, weather etc.?  These are qualitative variables which are not factored into any of the analytical tools.
 
 
 ##  References
